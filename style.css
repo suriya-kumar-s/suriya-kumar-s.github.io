@@ -1,1 +1,127 @@
 
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #23978F;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #23978F;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 20px;
+    background-color: #23978F;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    background-color: #E1AD01;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-animation {
+    width: 50%;
+    height: 300px;
+    background-color: #E1AD01;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    margin: 40px 0;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.projects-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    font-size: 22px;
+}
+
+.project-card p {
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    color: #23978F;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
