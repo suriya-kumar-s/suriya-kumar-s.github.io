@@ -1,193 +1,111 @@
-/* Global Styles */
+* General reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Body */
-body {
-    background-color: #FFF8DC; /* Warm Sand */
-    color: #333333; /* Charcoal Gray */
+/* Color Palette */
+:root {
+  --primary: #23978F;        /* Teal Green */
+  --highlight: #FFF8DC;      /* Warm Sand */
+  --text: #333333;           /* Charcoal Gray */
+  --cta: #E1AD01;            /* Deep Mustard */
+  --cta-hover: #FFC107;      /* Amber */
 }
 
-/* Navbar Styles */
-.navbar {
+/* Navbar styles */
+header {
+  background-color: rgba(35, 151, 143, 0.95); /* Slight transparency */
+  color: white;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #E1AD01; /* Deep Mustard */
-  padding: 15px 30px;
-  position: fixed;
-  width: 100%;
+  position: sticky;
   top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .logo {
-  color: #333333; /* Charcoal Gray */
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--cta);
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--primary);
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
   font-weight: bold;
+  color: var(--cta);
+  margin-bottom: 15px;
 }
 
-.nav-links li a {
-  color: #333333; /* Charcoal Gray */
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--highlight);
 }
 
-.nav-links li a:hover {
-  color: #23978F; /* Teal hover */
+.cta-button {
+  background-color: var(--cta);
+  color: #000;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.nav-toggle {
-  color: #333333; /* Toggle icon color */
-}
-/* Landing Section */
-#landing {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #23978F; /* Teal Green */
-    color: #FFF8DC; /* Warm Sand */
-    position: relative;
+.cta-button:hover {
+  background-color: var(--cta-hover);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-#landing .landing-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #E1AD01; /* Deep Mustard */
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 
-#landing .cta-button {
-    padding: 15px 30px;
-    background-color: #FFC107; /* Amber */
-    color: #333333; /* Charcoal Gray */
-    font-size: 1.2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-#landing .cta-button:hover {
-    background-color: #F4C430; /* Goldenrod */
-}
-
-/* About Section */
-#about {
-    padding: 100px 20px;
-    text-align: center;
-    background-color: #FFF8DC; /* Warm Sand */
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    color: #23978F; /* Teal Green */
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 1.2rem;
-    color: #333333; /* Charcoal Gray */
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Projects Section */
-#projects {
-    padding: 100px 20px;
-    text-align: center;
-    background-color: #23978F; /* Teal Green */
-    color: #FFF8DC; /* Warm Sand */
-}
-
-#projects h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.project-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.project-card {
-    background-color: #333333; /* Charcoal Gray */
-    color: #FFF8DC; /* Warm Sand */
-    padding: 30px;
-    width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.project-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
-.project-card h3 {
-    font-size: 1.5rem;
-    color: #E1AD01; /* Deep Mustard */
-}
-
-.project-card p {
-    font-size: 1rem;
-}
-
-/* Contact Section */
-#contact {
-    padding: 80px 20px;
-    background-color: #23978F; /* Teal Green */
-    color: #FFF8DC; /* Warm Sand */
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: #C0C7D1; /* Sky Gray */
-    color: #333333; /* Charcoal Gray */
-    font-size: 1rem;
-}
-
-.contact-form button {
-    padding: 12px 25px;
-    background-color: #FFC107; /* Amber */
-    color: #333333; /* Charcoal Gray */
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
+  .menu-icon {
+    display: block;
+    color: white;
+    font-size: 24px;
     cursor: pointer;
-}
-
-.contact-form button:hover {
-    background-color: #F4C430; /* Goldenrod */
-}
-
-/* Footer */
-footer {
-    background-color: #333333; /* Charcoal Gray */
-    color: #FFF8DC; /* Warm Sand */
-    padding: 20px;
-    text-align: center;
+  }
 }
