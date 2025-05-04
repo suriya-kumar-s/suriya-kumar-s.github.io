@@ -109,3 +109,40 @@ header {
     cursor: pointer;
   }
 }
+header {
+  background-color: var(--highlight); /* Warm Sand */
+  color: var(--text); /* Dark text for contrast */
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo text color (if any) */
+.logo span {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Nav links updated for contrast */
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--cta); /* Mustard hover */
+}
+
+.menu-icon {
+  display: none;
+  color: var(--text);
+  font-size: 24px;
+  cursor: pointer;
+}
