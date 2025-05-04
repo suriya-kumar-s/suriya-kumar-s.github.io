@@ -25,35 +25,41 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  right: 0;
   width: 100%;
+  z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s ease-out;
 }
 
-/* ABOUT SECTION */
+/* MAIN CONTENT */
 main {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px; /* Ensure content doesn't overlap with header */
+  padding-bottom: 100px; /* Ensure content doesn't overlap with footer */
+  min-height: 100vh; /* Full height */
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh; /* Full height */
 }
 
-/* FULL SCREEN BACKGROUND FOR ABOUT */
+/* ABOUT SECTION */
 .about {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 80px 100px;
-  min-height: 100vh; /* Full height */
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 1200px; /* Optional: Add a max-width to ensure content doesn't stretch too much */
 }
 
 .about::before {
@@ -124,9 +130,12 @@ footer {
   padding: 20px;
   background-color: #1f1f38;
   color: #aaa;
-  position: relative;
-  z-index: 1;
-  margin-top: auto; /* To push the footer to the bottom of the page */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 /* ANIMATED BACKGROUND (optional video layer) */
