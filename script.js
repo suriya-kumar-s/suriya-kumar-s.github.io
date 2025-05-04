@@ -1,23 +1,12 @@
-// Toggle mobile nav menu
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
+document.addEventListener("DOMContentLoaded", () => {
+  const ctaButton = document.querySelector('.cta-button');
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 70, // header height offset
-          behavior: "smooth"
-        });
-      }
+  // Add smooth scroll animation for CTA button
+  ctaButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector(ctaButton.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
     });
   });
 });
