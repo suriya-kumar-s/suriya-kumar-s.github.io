@@ -1,28 +1,20 @@
-:root {
-  --background: #000000; /* Black */
-  --accent: #FF4191; /* Vibrant Pink */
-  --cta: #E90074; /* Deep Magenta */
-  --text: #FFF078; /* Pastel Yellow */
-  --header-bg: #1f1f1f; /* Slightly Darker for Header */
-  --header-text: #FFF078; /* Pastel Yellow for Header Text */
-}
-
-/* GLOBAL STYLES */
+/* GLOBAL */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* FULL PAGE SETUP */
 html, body {
-  margin: 0;
-  padding: 0;
+  height: 100%;
+  width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--background);
+  background-color: #23978F; /* Teal Green */
   color: var(--text);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -30,129 +22,111 @@ header {
   background-color: var(--header-bg);
   color: var(--header-text);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 15px 50px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  font-size: 1.5em;
-  color: var(--header-text);
-}
-
-.logo img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.nav-links a {
-  color: var(--header-text);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.nav-links a:hover {
-  color: var(--cta);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
 }
 
 /* ABOUT SECTION */
+main {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh; /* Full height */
+}
+
+/* FULL SCREEN BACKGROUND FOR ABOUT */
 .about {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 100px 50px;
-  max-width: 1200px;
-  width: 100%;
-  text-align: center;
+  padding: 80px 100px;
+  min-height: 100vh; /* Full height */
+  position: relative;
+  z-index: 2;
 }
 
-.about-content {
-  flex: 1;
-  max-width: 600px;
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #23978F 0%, #1F817A 100%);
+  opacity: 0.3;
+  z-index: -1;
 }
 
 .about-content h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   color: var(--accent);
   margin-bottom: 20px;
-  text-transform: uppercase;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideIn 1s forwards;
 }
 
 .about-content p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-bottom: 30px;
   color: #eee;
-  line-height: 1.6;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideIn 1.2s forwards;
+  animation-delay: 0.3s;
 }
 
 .cta-button {
-  padding: 12px 40px;
+  padding: 12px 30px;
   background-color: var(--cta);
   color: var(--text);
-  font-size: 1.2em;
+  font-size: 1em;
   border: none;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  letter-spacing: 1px;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideIn 1.5s forwards;
+  animation-delay: 0.6s;
 }
 
 .cta-button:hover {
   background-color: var(--accent);
   color: var(--background);
-  transform: scale(1.05);
 }
 
-.about-image {
-  flex: 1;
-  max-width: 350px;
-  padding-left: 50px;
-}
-
+/* CIRCULAR IMAGE */
 .about-image img {
-  max-width: 100%;
-  height: auto;
+  max-width: 250px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.about-image img:hover {
-  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  animation: fadeInImage 1.5s ease-in;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   background-color: #1f1f38;
   color: #aaa;
-  width: 100%;
   position: relative;
   z-index: 1;
-  font-size: 1em;
-  letter-spacing: 1px;
+  margin-top: auto; /* To push the footer to the bottom of the page */
 }
 
 /* ANIMATED BACKGROUND (optional video layer) */
@@ -164,8 +138,8 @@ body::before {
   height: 100%;
   width: 100%;
   background: url('animated-bg.gif') center center / cover no-repeat;
-  z-index: -1;
-  opacity: 0.1;
+  z-index: 0;
+  opacity: 0.2;
   pointer-events: none;
 }
 
