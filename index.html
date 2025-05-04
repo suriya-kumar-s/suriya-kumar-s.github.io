@@ -8,16 +8,24 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script src="script.js" defer></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    body {
+      background-image: url('images/pattern-bg.png'); /* Add your patterned image path here */
+      background-repeat: repeat;
+      background-size: auto;
+    }
+  </style>
 </head>
 <body>
   <lottie-player
-  src="https://assets3.lottiefiles.com/packages/lf20_jcikwtux.json" 
-  background="transparent"
-  speed="1"
-  loop
-  autoplay
-  style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.2; pointer-events: none;">
-</lottie-player>
+    src="https://assets3.lottiefiles.com/packages/lf20_jcikwtux.json"
+    background="transparent"
+    speed="1"
+    loop
+    autoplay
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.2; pointer-events: none;">
+  </lottie-player>
+
   <header>
     <div class="logo">
       <img src="images/logo.png" alt="Suriya Kumar Logo" />
@@ -32,17 +40,19 @@
     </nav>
   </header>
 
-  <!-- About Section -->
-  <section class="about">
-    <div class="about-content">
-      <h1>About Me</h1>
-      <p>Hello! I am Suriya Kumar, a passionate biomedical engineer with a keen interest in healthcare research and innovation.</p>
-      <a href="projects.html" class="cta-button">Explore My Projects</a>
-    </div>
-    <div class="about-image">
-      <img src="images/logo.png" alt="About Image" />
-    </div>
-  </section>
+  <main>
+    <!-- About Section -->
+    <section class="about">
+      <div class="about-content">
+        <h1>About Me</h1>
+        <p>Hello! I am Suriya Kumar, a passionate biomedical engineer with a keen interest in healthcare research and innovation.</p>
+        <a href="projects.html" class="cta-button">Explore My Projects</a>
+      </div>
+      <div class="about-image">
+        <img src="images/logo.png" alt="About Image" />
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Suriya Kumar. All rights reserved.</p>
