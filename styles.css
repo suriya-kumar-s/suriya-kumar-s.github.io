@@ -7,13 +7,23 @@
   --header-text: #333333; /* Charcoal Gray */
 }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--background);
-  color: var(--text);
+/* GLOBAL */
+* {
+  box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
 header {
   background-color: var(--header-bg);
   color: var(--header-text);
@@ -52,7 +62,13 @@ header {
   color: var(--cta);
 }
 
-/* About Section */
+/* ABOUT SECTION */
+main {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
 .about {
   display: flex;
   flex-direction: row;
@@ -60,6 +76,20 @@ header {
   align-items: center;
   padding: 80px 100px;
   animation: fadeIn 1.5s ease-in;
+  position: relative;
+  z-index: 2;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #23978F 0%, #1F817A 100%);
+  opacity: 0.3;
+  z-index: -1;
 }
 
 .about-content h1 {
@@ -74,7 +104,7 @@ header {
 .about-content p {
   font-size: 1.2em;
   margin-bottom: 30px;
-  color: #ccc;
+  color: #eee;
   transform: translateY(50px);
   opacity: 0;
   animation: slideIn 1.2s forwards;
@@ -102,21 +132,41 @@ header {
   color: var(--background);
 }
 
+/* CIRCULAR IMAGE */
 .about-image img {
-  max-width: 300px; /* Set the image size */
-  height: auto;
-  border-radius: 8px;
+  max-width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
   animation: fadeInImage 1.5s ease-in;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #1f1f38;
   color: #aaa;
+  position: relative;
+  z-index: 1;
 }
 
-/* Keyframes for animations */
+/* ANIMATED BACKGROUND (optional video layer) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url('animated-bg.gif') center center / cover no-repeat;
+  z-index: 0;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* ANIMATION KEYFRAMES */
 @keyframes fadeIn {
   from {
     opacity: 0;
