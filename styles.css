@@ -1,33 +1,31 @@
-* General reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Color Palette */
+<!-- style.css -->
 :root {
-  --primary: #23978F;        /* Teal Green */
-  --highlight: #FFF8DC;      /* Warm Sand */
-  --text: #333333;           /* Charcoal Gray */
-  --cta: #E1AD01;            /* Deep Mustard */
-  --cta-hover: #FFC107;      /* Amber */
+  --background: #2c2b4b; /* Royal dark purple */
+  --accent: #ffd93d; /* Sunshine yellow */
+  --cta: #e1ad01; /* Deep mustard */
+  --text: #ffffff;
+  --header-bg: #ffffff; /* White header */
+  --header-text: #2c2b4b;
 }
 
-/* Navbar styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
 header {
-  background-color: rgba(35, 151, 143, 0.95); /* Slight transparency */
-  color: white;
-  padding: 15px 40px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 50px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -38,111 +36,78 @@ header {
 
 .logo img {
   height: 40px;
+  width: 40px;
   border-radius: 50%;
 }
 
-.nav-links {
-  display: flex;
-  gap: 30px;
-}
-
 .nav-links a {
-  color: white;
+  color: var(--header-text);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--cta);
-}
-
-/* Hero Section */
-.hero {
-  background-color: var(--primary);
-  color: white;
-  padding: 120px 20px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--cta);
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: var(--highlight);
-}
-
-.cta-button {
-  background-color: var(--cta);
-  color: #000;
-  border: none;
-  padding: 12px 30px;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
+  margin-left: 25px;
   font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: var(--cta-hover);
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-  }
-}
-header {
-  background-color: var(--highlight); /* Warm Sand */
-  color: var(--text); /* Dark text for contrast */
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* Logo text color (if any) */
-.logo span {
-  color: var(--text);
-  font-weight: 600;
-}
-
-/* Nav links updated for contrast */
-.nav-links a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--cta); /* Mustard hover */
+  color: var(--cta);
 }
 
-.menu-icon {
-  display: none;
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 100px;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.cta-button {
+  padding: 12px 30px;
+  background-color: var(--cta);
   color: var(--text);
-  font-size: 24px;
-  cursor: pointer;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+.hero-animation {
+  max-width: 400px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1f1f38;
+  color: #aaa;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
