@@ -1,5 +1,4 @@
-
-/* General Styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,121 +6,93 @@
     font-family: 'Arial', sans-serif;
 }
 
+/* Body */
 body {
-    background-color: #fff;
-    color: #333;
+    background-color: #FFF8DC; /* Warm Sand */
+    color: #333333; /* Charcoal Gray */
 }
 
-a {
-    text-decoration: none;
-    color: #23978F;
+/* Hero / Landing Section */
+#landing {
+    background-color: #23978F; /* Teal Green */
+    color: #FFF8DC; /* Warm Sand */
+    padding: 100px 0;
+    text-align: center;
 }
 
-h1, h2, h3 {
-    color: #333;
+#landing h1 {
+    font-size: 3rem;
+    color: #E1AD01; /* Deep Mustard */
 }
 
-/* Header Section */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #23978F;
+#landing p {
+    font-size: 1.5rem;
+    color: #C0C7D1; /* Sky Gray */
 }
 
-header .logo img {
-    height: 40px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    font-size: 16px;
-    color: #fff;
-    font-weight: bold;
-}
-
-/* Hero Section */
-#hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 20px;
-    background-color: #23978F;
-    color: #fff;
-}
-
-.hero-content h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.hero-content p {
-    font-size: 18px;
-}
-
-.cta-btn {
-    padding: 10px 20px;
-    background-color: #E1AD01;
-    color: #fff;
+#landing .cta-button {
+    background-color: #FFC107; /* Amber */
+    color: #333333; /* Charcoal Gray */
+    padding: 15px 30px;
+    font-size: 1.2rem;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.hero-animation {
-    width: 50%;
-    height: 300px;
-    background-color: #E1AD01;
+#landing .cta-button:hover {
+    background-color: #F4C430; /* Goldenrod */
 }
 
-/* Sections */
-section {
-    padding: 60px 20px;
-    margin: 40px 0;
-}
-
-.section-title h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.projects-grid {
-    display: flex;
-    gap: 20px;
-}
-
-.project-card {
-    background-color: #f4f4f4;
-    padding: 20px;
-    width: 30%;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.project-card h3 {
-    font-size: 22px;
-}
-
-.project-card p {
-    margin-bottom: 10px;
-}
-
-.project-card a {
-    color: #23978F;
-}
-
-/* Footer */
-footer {
+/* About Me Section */
+#about {
+    padding: 50px 0;
+    background-color: #FFF8DC; /* Warm Sand */
     text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
 }
+
+#about h2 {
+    font-size: 2.5rem;
+    color: #23978F; /* Teal Green */
+}
+
+#about p {
+    font-size: 1.2rem;
+    color: #333333; /* Charcoal Gray */
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px 0;
+    background-color: #23978F; /* Teal Green */
+    color: #FFF8DC; /* Warm Sand */
+}
+
+#projects .project-card {
+    background-color: #333333; /* Charcoal Gray */
+    color: #FFF8DC; /* Warm Sand */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#projects .project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Skills Section */
+#skills {
+    padding: 50px 0;
+    background-color: #FFF8DC; /* Warm Sand */
+}
+
+#skills .skill-bar {
+    background-color: #C0C7D1; /* Sky Gray */
+    height: 10px;
+    margin: 5px 0;
+}
+
+#skills .skill-bar .progress {
+    background-color: #E1AD01; /
