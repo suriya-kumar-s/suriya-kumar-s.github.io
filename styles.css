@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #23978F; /* Teal Green */
+  background-color: #E1AD01; /* Deep Mustard */
   padding: 15px 30px;
   position: fixed;
   width: 100%;
@@ -27,70 +27,21 @@ body {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   color: #333333; /* Charcoal Gray */
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-}
-
 .nav-links li a {
-  color: #FFF8DC; /* Warm Sand */
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s;
+  color: #333333; /* Charcoal Gray */
 }
 
 .nav-links li a:hover {
-  color: #E1AD01; /* Deep Mustard */
+  color: #23978F; /* Teal hover */
 }
 
-/* Toggle button for mobile */
 .nav-toggle {
-  display: none;
-  font-size: 28px;
-  color: #FFF8DC;
-  cursor: pointer;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: -100%;
-    background-color: #C0C7D1; /* Sky Gray */
-    width: 220px;
-    transition: right 0.3s ease-in-out;
-    padding: 15px;
-    border-radius: 0 0 10px 10px;
-  }
-
-  .nav-links.active {
-    right: 10px;
-  }
-
-  .nav-links li {
-    margin: 15px 0;
-  }
+  color: #333333; /* Toggle icon color */
 }
 /* Landing Section */
 #landing {
