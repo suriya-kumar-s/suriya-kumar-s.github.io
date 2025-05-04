@@ -1,86 +1,42 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suriya Kumar's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suriya Kumar | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-<!-- Navbar -->
-  <nav class="navbar">
+  <header>
     <div class="logo">
-      <img src="images/logo.png" alt="Logo">
+      <img src="logo.png" alt="Suriya Kumar Logo" />
       <span>Suriya Kumar</span>
     </div>
-    <div class="nav-toggle" id="nav-toggle">&#9776;</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#landing">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Digital World</h1>
+      <p>Innovative Biomedical Engineer | Passionate About Healthcare & Research</p>
+      <a href="projects.html" class="cta-button">Explore My Projects</a>
+    </div>
+    <div class="hero-animation">
+      <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_0yfsb3a1.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+  </section>
 
-    <!-- Landing Section -->
-    <section id="landing">
-        <div class="landing-content">
-            <h1>Welcome to My Digital World</h1>
-            <p>Innovative Biomedical Engineer | Passionate about Healthcare & Research</p>
-            <a href="#projects" class="cta-button">Explore My Projects</a>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>I am Suriya Kumar, a Biomedical Engineering student at SRM Institute of Science and Technology, with a deep passion for AI, healthcare innovations, and research.</p>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-cards">
-            <div class="project-card">
-                <img src="assets/project1.jpg" alt="AI Healthcare">
-                <h3>AI in Healthcare</h3>
-                <p>Developed AI algorithms to assist in early diagnosis of diseases.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/project2.jpg" alt="Wearable Tech">
-                <h3>Wearable Health Monitoring</h3>
-                <p>Created a wearable device for continuous health monitoring using IoT sensors.</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/project3.jpg" alt="Research Paper">
-                <h3>Biomedical Research</h3>
-                <p>Published papers on nanotechnology applications in healthcare.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="mailto:sk6165@srmist.edu.in" method="get" class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="cta-button">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Suriya Kumar | All Rights Reserved</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 Suriya Kumar. All rights reserved.</p>
+  </footer>
 </body>
 </html>
