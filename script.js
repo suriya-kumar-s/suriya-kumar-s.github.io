@@ -1,36 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Smooth Scrolling for Navigation Links
-  const navLinks = document.querySelectorAll('.nav-links a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1); // Get target ID from href
-      const targetElement = document.getElementById(targetId);
-      window.scrollTo({
-        top: targetElement.offsetTop - 50, // Offset to make sure header doesn't cover it
-        behavior: 'smooth'
-      });
+// Dark Mode Toggle Function
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const body = document.body;
+
+darkModeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+});
+
+// Smooth Scrolling for Links
+const scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+scrollLinks.forEach(link => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop - 50, // offset for header
+      behavior: "smooth",
     });
   });
+});
 
-  // Animation for elements when they are in viewport
-  const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    const windowHeight = window.innerHeight;
+// Reveal Elements on Scroll
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
-    elements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) {
-        element.classList.add('in-viewport');
-      } else {
-        element.classList.remove('in-viewport');
-      }
-    });
-  };
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
 
-  // Listen for scroll event
-  window.addEventListener('scroll', animateOnScroll);
+  revealElements.forEach(element => {
+    const elementTop = element.getBoundingClientRect().top;
+    const elementVisible = 150;
 
-  // Initial call to check elements already in viewport
-  animateOnScroll();
+    if (elementTop < windowHeight - elementVisible) {
+      element.classList.add('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', revealOnScroll);
+
+// Fade-in effect for elements when they come into view
+window.addEventListener("load", () => {
+  revealOnScroll();
 });
