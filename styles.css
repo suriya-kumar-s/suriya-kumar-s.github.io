@@ -1,11 +1,10 @@
-<!-- style.css -->
 :root {
-  --background: #2c2b4b; /* Royal dark purple */
-  --accent: #ffd93d; /* Sunshine yellow */
-  --cta: #e1ad01; /* Deep mustard */
-  --text: #ffffff;
-  --header-bg: #ffffff; /* White header */
-  --header-text: #2c2b4b;
+  --background: #23978F; /* Teal Green */
+  --accent: #FFD93D; /* Sunshine Yellow */
+  --cta: #E1AD01; /* Deep Mustard */
+  --text: #333333; /* Charcoal Gray */
+  --header-bg: #FFF8DC; /* Warm Sand */
+  --header-text: #333333; /* Charcoal Gray */
 }
 
 body {
@@ -26,6 +25,7 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
 }
 
 .logo {
@@ -65,12 +65,19 @@ header {
   font-size: 3em;
   color: var(--accent);
   margin-bottom: 20px;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideIn 1s forwards;
 }
 
 .hero-content p {
   font-size: 1.2em;
   margin-bottom: 30px;
   color: #ccc;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideIn 1.2s forwards;
+  animation-delay: 0.3s;
 }
 
 .cta-button {
@@ -83,6 +90,10 @@ header {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideIn 1.5s forwards;
+  animation-delay: 0.6s;
 }
 
 .cta-button:hover {
@@ -90,8 +101,11 @@ header {
   color: var(--background);
 }
 
-.hero-animation {
-  max-width: 400px;
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  animation: fadeInImage 1.5s ease-in;
 }
 
 footer {
@@ -101,6 +115,7 @@ footer {
   color: #aaa;
 }
 
+/* Keyframes for animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -109,5 +124,27 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
