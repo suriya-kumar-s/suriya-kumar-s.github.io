@@ -1,4 +1,59 @@
-.hero {
+:root {
+  --background: #23978F; /* Teal Green */
+  --accent: #FFD93D; /* Sunshine Yellow */
+  --cta: #E1AD01; /* Deep Mustard */
+  --text: #333333; /* Charcoal Gray */
+  --header-bg: #FFF8DC; /* Warm Sand */
+  --header-text: #333333; /* Charcoal Gray */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.nav-links a {
+  color: var(--header-text);
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--cta);
+}
+
+/* About Section */
+.about {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -7,8 +62,8 @@
   animation: fadeIn 1.5s ease-in;
 }
 
-.hero-content h1 {
-  font-size: 3em;
+.about-content h1 {
+  font-size: 2.5em;
   color: var(--accent);
   margin-bottom: 20px;
   transform: translateY(50px);
@@ -16,7 +71,7 @@
   animation: slideIn 1s forwards;
 }
 
-.hero-content p {
+.about-content p {
   font-size: 1.2em;
   margin-bottom: 30px;
   color: #ccc;
@@ -47,8 +102,8 @@
   color: var(--background);
 }
 
-.hero-image img {
-  max-width: 40%; /* Adjusted size to make the image smaller */
+.about-image img {
+  max-width: 300px; /* Set the image size */
   height: auto;
   border-radius: 8px;
   animation: fadeInImage 1.5s ease-in;
