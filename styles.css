@@ -5,12 +5,11 @@
   box-sizing: border-box;
 }
 
-/* FULL PAGE SETUP */
 html, body {
   height: 100%;
   width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #23978F; /* Teal Green */
+  background-color: #1C3A3D; /* Deep Teal Background */
   color: var(--text);
   display: flex;
   flex-direction: column;
@@ -24,7 +23,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 20px 50px;
   position: fixed;
   top: 0;
   left: 0;
@@ -35,49 +34,99 @@ header {
   animation: fadeIn 1s ease-out;
 }
 
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+/* NAVIGATION */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--header-text);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cta);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 /* MAIN CONTENT */
 main {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding-top: 100px; /* Ensure content doesn't overlap with header */
-  padding-bottom: 100px; /* Ensure content doesn't overlap with footer */
-  min-height: 100vh; /* Full height */
+  padding-top: 100px;
+  padding-bottom: 100px;
   position: relative;
   z-index: 1;
 }
 
-/* ABOUT SECTION */
-.about {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 100px;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1200px; /* Optional: Add a max-width to ensure content doesn't stretch too much */
+/* CONTENT CONTAINER */
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  max-width: 1200px;
+  padding: 0 50px;
 }
 
-.about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.about {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-image img {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #23978F 0%, #1F817A 100%);
-  opacity: 0.3;
-  z-index: -1;
+  max-width: 300px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInImage 1.5s ease-in;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .about-content h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   color: var(--accent);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   transform: translateY(50px);
   opacity: 0;
   animation: slideIn 1s forwards;
@@ -114,16 +163,6 @@ main {
   color: var(--background);
 }
 
-/* CIRCULAR IMAGE */
-.about-image img {
-  max-width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  animation: fadeInImage 1.5s ease-in;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
@@ -136,20 +175,6 @@ footer {
   right: 0;
   width: 100%;
   z-index: 1000;
-}
-
-/* ANIMATED BACKGROUND (optional video layer) */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: url('animated-bg.gif') center center / cover no-repeat;
-  z-index: 0;
-  opacity: 0.2;
-  pointer-events: none;
 }
 
 /* ANIMATION KEYFRAMES */
