@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #87CEEB; /* Sky blue background */
+        }
+
+        .game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .mario {
+            position: absolute;
+            bottom: 100px;
+            left: 50px;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6e/Super_Mario_Character_Art.png');
+            background-size: cover;
+            transition: transform 0.1s ease-in-out;
+        }
+
+        .ground {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20px;
+            background-color: #228B22;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-300">
+    <div class="game-container">
+        <div class="mario" id="mario"></div>
+        <div class="ground"></div>
+    </div>
+
+    <script>
+        // Set initial game variables
+        let mario = document.getElementById('mario');
+        let marioPosition = { x: 50, y: 100 }; // Mario's initial position
+        let velocity = { x: 0, y: 0 }; // Mario's velocity for movement and gravity
+        let gravity = 0.5; // Gravity strength
+        let jumpPower = -12; // Jump power (negative to go up)
+        let isJumping = false; // To prevent multiple jumps
+        let isOnGround = true; // To check if Mario is on the ground
+
+        // Game update function
+        function gameLoop() {
+            // Update Mario's position
+            marioPosition.x += velocity.x;
+            marioPosition.y += velocity.y;
+
+            // Apply gravity
+            if (marioPosition.y < window.innerHeight - 120) {
+                velocity.y += gravity; // Mario is falling
+                isOnGround = false;
+            } else {
+                velocity.y = 0;
+                marioPosition.y = window.innerHeight - 120; // Stop Mario at the ground level
+                isOnGround = true;
+            }
+
+            // Apply updated position
+            mario.style.left = marioPosition.x + 'px';
+            mario.style.bottom = marioPosition.y + 'px';
+
+            // Run the game loop recursively
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Control Mario with arrow keys
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                velocity.x = -5; // Move left
+            } else if (event.key === 'ArrowRight') {
+                velocity.x = 5; // Move right
+            } else if (event.key === ' ' && isOnGround) {
+                velocity.y = jumpPower; // Jump if on ground
+                isJumping = true;
+            }
+        });
+
+        // Stop Mario when the key is released
+        document.addEventListener('keyup', (event) => {
+            if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+                velocity.x = 0; // Stop horizontal movement
+            }
+        });
+
+        // Start the game loop
+        gameLoop();
+    </script>
+</body>
+
+</html>
