@@ -2,54 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-black text-white min-h-screen p-8 font-sans">
+<body class="bg-black text-white min-h-screen">
+  <div class="p-6">
+    <a href="index.html" class="text-sm text-gray-400 hover:text-white">&larr; Back to Home</a>
 
-  <a href="index.html" class="text-yellow-400 hover:underline mb-6 inline-block">&larr; Back to Home</a>
-
-  <h1 class="text-4xl font-bold text-center mb-2">My Projects</h1>
-  <p class="text-center text-gray-300 mb-10">Showcasing my works, innovations, and learnings</p>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-    <!-- Project 1 -->
-    <div class="bg-gradient-to-r from-teal-400 to-green-300 rounded-xl p-6 shadow-lg text-black">
-      <h2 class="text-xl font-bold mb-2">Rural Health Monitoring System</h2>
-      <p class="text-sm">LoRa + GSM-based system for continuous health data monitoring in remote areas. Includes animated use-case video.</p>
-      <p class="text-xs mt-2 text-gray-800 italic">Feb 2025 – Mini Project</p>
+    <div class="mt-6 text-center">
+      <h1 class="text-4xl font-bold">Projects</h1>
+      <p class="text-gray-400 mt-2">Explore my academic and personal project journey</p>
     </div>
 
-    <!-- Project 2 -->
-    <div class="bg-gradient-to-r from-pink-400 to-rose-300 rounded-xl p-6 shadow-lg text-black">
-      <h2 class="text-xl font-bold mb-2">Nanomaterial Implants Study</h2>
-      <p class="text-sm">In-depth journal-based presentation on nanotech in ocular, dental, and ear implants, with recent innovations.</p>
-      <p class="text-xs mt-2 text-gray-800 italic">March 2025 – Research Presentation</p>
+    <!-- Filters -->
+    <div class="flex flex-wrap justify-center mt-8 gap-4">
+      <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">All Projects</button>
+      <button class="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded">Academic</button>
+      <button class="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded">Mini Projects</button>
+      <button class="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded">Research</button>
+      <button class="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded">Personal</button>
     </div>
 
-    <!-- Project 3 -->
-    <div class="bg-gradient-to-r from-yellow-300 to-amber-200 rounded-xl p-6 shadow-lg text-black">
-      <h2 class="text-xl font-bold mb-2">AI in Vaccine Development</h2>
-      <p class="text-sm">Award-winning idea exploring how AI accelerates vaccine research, simulation, and personalization.</p>
-      <p class="text-xs mt-2 text-gray-800 italic">Jan 2025 – IEEE EMBS Innovation</p>
-    </div>
+    <!-- Project Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-4 md:px-12">
+      <!-- Project Card -->
+      <div class="bg-gray-800 rounded-xl p-6 shadow hover:shadow-xl transition-all">
+        <h2 class="text-xl font-semibold">Remote Health Monitoring (LoRa + GSM)</h2>
+        <p class="text-sm text-gray-400 mt-1">April 2025</p>
+        <p class="mt-3 text-gray-300">Designed a system to monitor rural patients using LoRa and GSM, with animated explainer video and business canvas model.</p>
+        <p class="mt-3 text-sm text-yellow-400">#Biomedical #IoT #LoRa #GSM</p>
+      </div>
 
-    <!-- Project 4 -->
-    <div class="bg-gradient-to-r from-indigo-300 to-purple-300 rounded-xl p-6 shadow-lg text-black">
-      <h2 class="text-xl font-bold mb-2">Tamil Folklore Video - Nallathangai</h2>
-      <p class="text-sm">10-min AI-generated video based on ancient folklore, combining voiceover, visuals, and cultural depth.</p>
-      <p class="text-xs mt-2 text-gray-800 italic">Ongoing – YouTube Project</p>
-    </div>
+      <!-- Project Card -->
+      <div class="bg-gray-800 rounded-xl p-6 shadow hover:shadow-xl transition-all">
+        <h2 class="text-xl font-semibold">Nanotech in Implants</h2>
+        <p class="text-sm text-gray-400 mt-1">March 2025</p>
+        <p class="mt-3 text-gray-300">Covered advancements in ocular, dental, and ear implants using nanotechnology, focused on journal-backed insights.</p>
+        <p class="mt-3 text-sm text-yellow-400">#Nanotech #Implants #Research</p>
+      </div>
 
-    <!-- Project 5 -->
-    <div class="bg-gradient-to-r from-lime-300 to-green-200 rounded-xl p-6 shadow-lg text-black">
-      <h2 class="text-xl font-bold mb-2">Celonis Business Analyst Internship</h2>
-      <p class="text-sm">Completed virtual internship on business process mining, improving real-time workflow analysis.</p>
-      <p class="text-xs mt-2 text-gray-800 italic">April–June 2024 – AICTE Virtual Internship</p>
-    </div>
+      <!-- Project Card -->
+      <div class="bg-gray-800 rounded-xl p-6 shadow hover:shadow-xl transition-all">
+        <h2 class="text-xl font-semibold">AI in Vaccine Development</h2>
+        <p class="text-sm text-gray-400 mt-1">Feb 2025</p>
+        <p class="mt-3 text-gray-300">Won 1st prize in IEEE EMBS Med-Innovate with a proposal on how AI can revolutionize vaccine discovery.</p>
+        <p class="mt-3 text-sm text-yellow-400">#AI #Healthcare #IEEE</p>
+      </div>
 
+      <!-- Add more cards as needed -->
+    </div>
   </div>
 </body>
 </html>
