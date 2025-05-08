@@ -3,7 +3,7 @@
 <head> 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects</title>
+  <title>Projects | Suriya Kumar S</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -17,57 +17,68 @@
     }
   </style>
 </head>
-<body class="bg-black text-white min-h-screen">
-  <div class="p-6">
-    <a href="index.html" class="text-sm text-gray-400 hover:text-white">&larr; Back to Home</a>
+<body class="bg-black text-white font-sans min-h-screen">
 
-    <div class="mt-6 text-center">
-      <h1 class="text-4xl font-bold">Projects</h1>
-      <p class="text-gray-400 mt-2">Explore my academic and personal project journey</p>
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
+    <h1 class="text-2xl font-bold text-yellow-400">Suriya Kumar S</h1>
+    <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
+      <li><a href="about.html" class="hover:text-yellow-400">About</a></li>
+      <li><a href="projects.html" class="text-yellow-400 underline">Projects</a></li>
+      <li><a href="#skills" class="hover:text-yellow-400">Skills</a></li>
+      <li><a href="#achievements" class="hover:text-yellow-400">Achievements</a></li>
+      <li><a href="#blog" class="hover:text-yellow-400">Blog</a></li>
+      <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Title -->
+  <div class="mt-10 text-center">
+    <h1 class="text-4xl font-extrabold text-yellow-400">Projects</h1>
+    <p class="text-gray-400 mt-2">Explore my academic and personal project journey</p>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="flex flex-wrap justify-center mt-8 gap-4 px-4">
+    <button class="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold transition">All Projects</button>
+    <button class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full font-semibold transition">Academic</button>
+    <a href="mini-projects.html" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full font-semibold transition">Mini Projects</a>
+    <button class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full font-semibold transition">Research</button>
+    <button class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full font-semibold transition">Personal</button>
+  </div>
+
+  <!-- Project Cards -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 px-6 md:px-16 pb-16">
+    
+    <!-- Project 1 -->
+    <div class="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+      <img src="images/chess.jpg" alt="Chess Game using AI" class="w-full project-image mb-4">
+      <h2 class="text-xl font-bold">CHESS Game using AI</h2>
+      <p class="text-sm text-gray-400 mt-1">May 2025</p>
+      <p class="mt-3 text-sm text-yellow-400">#AI #Snakegame #Game</p>
+      <a href="https://chess-suriya.vercel.app/" class="inline-block mt-4 text-yellow-400 hover:underline font-semibold">🔗 View Project</a>
     </div>
 
-    <!-- Filters -->
-   <div class="flex flex-wrap justify-center mt-8 gap-4">
-  <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">All Projects</button>
-  <button class="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded">Academic</button>
-  <a href="mini-projects.html" class="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded">Mini Projects</a>
-  <button class="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded">Research</button>
-  <button class="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded">Personal</button>
-</div>
-
-
-    <!-- Project Cards -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-4 md:px-12">
-      <!-- Project Card -->
-      <div class="bg-gray-800 rounded-xl p-6 shadow hover:shadow-xl transition-all">
-        <img src="images/chess.jpg" alt="chess board" class="w-full project-image mb-4">
-        <h2 class="text-xl font-semibold">CHESS Game using AI</h2>
-        <p class="text-sm text-gray-400 mt-1">May 2025</p>
-
-        <p class="mt-3 text-sm text-yellow-400">#AI #Snakegame #Game </p>
-          <a href="https://chess-suriya.vercel.app/" class="inline-block mt-4 text-yellow-400 hover:underline font-semibold">View Project</a>
-      </div>
-
-      <!-- Project Card -->
-      <div class="bg-gray-800 rounded-xl p-6 shadow hover:shadow-xl transition-all">
-        <img src="project2.jpg" alt="Nanotech in Implants" class="w-full project-image mb-4">
-        <h2 class="text-xl font-semibold">Nanotech in Implants</h2>
-        <p class="text-sm text-gray-400 mt-1">March 2025</p>
-        <p class="mt-3 text-gray-300">Covered advancements in ocular, dental, and ear implants using nanotechnology, focused on journal-backed insights.</p>
-        <p class="mt-3 text-sm text-yellow-400">#Nanotech #Implants #Research</p>
-      </div>
-
-      <!-- Project Card -->
-      <div class="bg-gray-800 rounded-xl p-6 shadow hover:shadow-xl transition-all">
-        <img src="project3.jpg" alt="AI in Vaccine Development" class="w-full project-image mb-4">
-        <h2 class="text-xl font-semibold">AI in Vaccine Development</h2>
-        <p class="text-sm text-gray-400 mt-1">Feb 2025</p>
-        <p class="mt-3 text-gray-300">Won 1st prize in IEEE EMBS Med-Innovate with a proposal on how AI can revolutionize vaccine discovery.</p>
-        <p class="mt-3 text-sm text-yellow-400">#AI #Healthcare #IEEE</p>
-      </div>
-
-      <!-- Add more cards as needed -->
+    <!-- Project 2 -->
+    <div class="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+      <img src="project2.jpg" alt="Nanotech in Implants" class="w-full project-image mb-4">
+      <h2 class="text-xl font-bold">Nanotech in Implants</h2>
+      <p class="text-sm text-gray-400 mt-1">March 2025</p>
+      <p class="mt-3 text-gray-300 text-sm">Covered advancements in ocular, dental, and ear implants using nanotechnology, focused on journal-backed insights.</p>
+      <p class="mt-3 text-sm text-yellow-400">#Nanotech #Implants #Research</p>
     </div>
+
+    <!-- Project 3 -->
+    <div class="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+      <img src="project3.jpg" alt="AI in Vaccine Development" class="w-full project-image mb-4">
+      <h2 class="text-xl font-bold">AI in Vaccine Development</h2>
+      <p class="text-sm text-gray-400 mt-1">Feb 2025</p>
+      <p class="mt-3 text-gray-300 text-sm">Won 1st prize in IEEE EMBS Med-Innovate with a proposal on how AI can revolutionize vaccine discovery.</p>
+      <p class="mt-3 text-sm text-yellow-400">#AI #Healthcare #IEEE</p>
+    </div>
+
+    <!-- Add more project cards below this section -->
+
   </div>
 </body>
 </html>
