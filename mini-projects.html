@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mini Projects</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,52 +13,83 @@
   </style>
 </head>
 <body class="bg-black text-white min-h-screen">
-  <div class="p-6 max-w-7xl mx-auto">
-    <a href="index.html" class="text-sm text-gray-400 hover:text-white transition">&larr; Back to Home</a>
+  <div class="p-6">
+    <a href="index.html" class="text-sm text-gray-400 hover:text-white">&larr; Back to Home</a>
 
     <div class="mt-6 text-center">
       <h1 class="text-4xl font-bold">Mini Projects</h1>
       <p class="text-gray-400 mt-2">Explore the mini projects developed in key biomedical domains</p>
     </div>
 
-    <div class="mt-10 grid gap-8 px-4 md:px-16">
-
+    <div class="mt-12 grid gap-10 px-4 md:px-16">
+      
       <!-- AI Section -->
-      <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 shadow-lg hover:ring-2 hover:ring-purple-400/50 transition duration-200">
-        <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">🤖 <span>Artificial Intelligence</span></h2>
-        <ul class="list-disc list-inside text-white space-y-2">
-          <li>AI-powered Snake Game using reinforcement learning.</li>
-          <li>AI Mood Music Recommender using keyword-based sentiment mapping.</li>
-          <li>AI-based disease prediction using basic ML classifiers.</li>
-        </ul>
+      <div class="bg-gradient-to-r from-indigo-500 to-purple-700 rounded-2xl p-6 shadow-xl hover:scale-[1.02] transition duration-300 md:w-3/4 md:ml-auto">
+        <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2">🤖 <span>Artificial Intelligence Projects</span></h2>
+        <div class="space-y-4">
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">🕹️ AI Snake Game</h3>
+            <p class="text-gray-300 text-sm">Reinforcement learning-based snake game with an auto-learning agent.</p>
+          </div>
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">🎵 Mood Music Recommender</h3>
+            <p class="text-gray-300 text-sm">Sentiment analysis of user input to recommend songs based on emotion.</p>
+          </div>
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">🧪 Disease Prediction Tool</h3>
+            <p class="text-gray-300 text-sm">ML classifiers for early-stage prediction of diseases.</p>
+          </div>
+        </div>
       </div>
 
       <!-- Biomedical Instrumentation Section -->
-      <div class="bg-gradient-to-r from-teal-400 to-emerald-500 rounded-2xl p-6 shadow-lg hover:ring-2 hover:ring-emerald-300/50 transition duration-200">
-        <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">🩺 <span>Biomedical Instrumentation</span></h2>
-        <ul class="list-disc list-inside text-white space-y-2">
-          <li><a href="cardiac-pacemakers.html" class="underline text-white hover:text-teal-100">Cardiac Pacemakers</a></li>
-        </ul>
+      <div class="bg-gradient-to-r from-teal-500 to-emerald-600 rounded-2xl p-6 shadow-xl hover:scale-[1.02] transition duration-300 md:w-3/4 md:mr-auto">
+        <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2">🩺 <span>Biomedical Instrumentation</span></h2>
+        <div class="space-y-4">
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">⚡ Cardiac Pacemaker Simulation</h3>
+            <p class="text-gray-300 text-sm">A simplified simulation project to understand pacing mechanisms and rhythm control.</p>
+            <a href="cardiac-pacemakers.html" class="text-teal-200 underline text-sm mt-1 inline-block">View Details</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Linear Integrated Circuits Section -->
-      <div class="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-6 shadow-lg hover:ring-2 hover:ring-yellow-300/50 transition duration-200">
-        <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">🔌 <span>Linear Integrated Circuits</span></h2>
-        <ul class="list-disc list-inside text-white space-y-2">
-          <li>Design of 555 timer-based heart rate simulator.</li>
-          <li>Op-amp based instrumentation amplifier for EMG signals.</li>
-          <li>Bio-signal noise reduction using active filters.</li>
-        </ul>
+      <!-- LIC Section -->
+      <div class="bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl p-6 shadow-xl hover:scale-[1.02] transition duration-300 md:w-3/4 md:ml-auto">
+        <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2">🔌 <span>Linear Integrated Circuits</span></h2>
+        <div class="space-y-4">
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">⏱️ 555 Timer Heart Rate Simulator</h3>
+            <p class="text-gray-300 text-sm">Simulates human heartbeats using a monostable multivibrator circuit.</p>
+          </div>
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">🔉 Instrumentation Amplifier</h3>
+            <p class="text-gray-300 text-sm">Built using op-amps to amplify EMG signals with high accuracy.</p>
+          </div>
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">🎚️ Bio-signal Noise Filter</h3>
+            <p class="text-gray-300 text-sm">Uses active bandpass filters for biomedical noise reduction.</p>
+          </div>
+        </div>
       </div>
 
       <!-- Biomaterials Section -->
-      <div class="bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl p-6 shadow-lg hover:ring-2 hover:ring-pink-300/50 transition duration-200">
-        <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">🧬 <span>Biomaterials - Tissue Interactions</span></h2>
-        <ul class="list-disc list-inside text-white space-y-2">
-          <li>Study of nanocoatings in dental implants for enhanced osseointegration.</li>
-          <li>Comparative analysis of polymeric vs metallic biomaterials in implants.</li>
-          <li>Modeling of biomaterial–tissue surface interaction using simulation tools.</li>
-        </ul>
+      <div class="bg-gradient-to-r from-pink-500 to-red-600 rounded-2xl p-6 shadow-xl hover:scale-[1.02] transition duration-300 md:w-3/4 md:mr-auto">
+        <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2">🧬 <span>Biomaterials & Tissue Interaction</span></h2>
+        <div class="space-y-4">
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">🦷 Nanocoatings for Dental Implants</h3>
+            <p class="text-gray-300 text-sm">Study on enhanced osseointegration using nanocoated surfaces.</p>
+          </div>
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">⚖️ Polymeric vs Metallic Implants</h3>
+            <p class="text-gray-300 text-sm">A comparative study on biocompatibility and mechanical properties.</p>
+          </div>
+          <div class="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition">
+            <h3 class="font-semibold text-lg">🧪 Surface Interaction Simulation</h3>
+            <p class="text-gray-300 text-sm">Modeling the interface between biomaterials and tissue using simulation tools.</p>
+          </div>
+        </div>
       </div>
 
     </div>
