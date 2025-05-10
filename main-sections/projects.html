@@ -1,17 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suriya Kumar S | Mini Projects</title>
   <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+  <title>Projects | Suriya Kumar S</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Adding fade-in effect */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Slide-in animation for mobile menu */
+    .slide-in {
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* Staggered fade-in animation for project items */
+    .project-item {
+      animation: fadeIn 1s ease-in-out;
+      opacity: 0;
+    }
+
+    .project-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .project-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .project-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+  </style>
 </head>
 
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white dark:bg-black dark:text-white transition-colors duration-300 font-sans">
 
-  <!-- Navbar -->
+ <!-- Navbar -->
   <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
     <h1 class="text-2xl font-bold">
       <a href="../index.html" class="transition-transform duration-300 hover:scale-105">Suriya Kumar S</a>
@@ -20,7 +66,7 @@
     <!-- Desktop Nav -->
     <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
       <li><a href="../main-sections/about.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">About</a></li>
-      <li><a href="../main-sections/projects.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Projects</a></li>
+      <li><a href="projects.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Projects</a></li>
       <li><a href="skills.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Skills</a></li>
       <li><a href="../main-sections/achievements.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Achievements</a></li>
       <li><a href="../main-sections/blog.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Blog</a></li>
@@ -34,108 +80,41 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center slide-in">
     <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6">&times;</button>
     <a href="../main-sections/about.html" class="hover:text-yellow-400">About</a>
-    <a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a>
+    <a href="projects.html" class="hover:text-yellow-400">Projects</a>
     <a href="skills.html" class="hover:text-yellow-400">Skills</a>
     <a href="../main-sections/achievements.html" class="hover:text-yellow-400">Achievements</a>
     <a href="../main-sections/blog.html" class="hover:text-yellow-400">Blog</a>
     <a href="../main-sections/contact-me.html" class="hover:text-yellow-400">Contact</a>
   </div>
 
-  <!-- Hero Section for Mini Projects -->
-  <section class="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-20">
-    <!-- Text Content -->
-    <div class="max-w-xl md:w-1/2">
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-relaxed">
-        My Mini Projects<br>Turning Ideas into Action!
-      </h2>
-      <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-        Check out the mini projects I’ve worked on as part of my journey in Biomedical Engineering.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="space-x-4">
-        <a href="#projects-list" class="bg-yellow-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-full font-semibold">Explore Projects</a>
-        <a href="#contact" class="border border-yellow-400 text-yellow-500 hover:bg-yellow-500 hover:text-black px-6 py-3 rounded-full font-semibold">Let's Connect</a>
-      </div>
-
-      <!-- Social Icons -->
-      <div class="flex space-x-4 mt-8 text-xl">
-        <a href="https://www.linkedin.com/in/suriyakumars" target="_blank" class="hover:text-yellow-400">LINKEDIN🔗</a>
-        <a href="https://github.com/suriya-kumar-s" target="_blank" class="hover:text-yellow-400">GITHUB💻</a>
-        <a href="mailto:suriyakumar342003@gmail.com" class="hover:text-yellow-400">GMAIL📧</a>
-      </div>
-
-      <!-- Funny line -->
-      <p class="mt-6 italic text-gray-500">P.S. Coding > Caffeine... Just kidding! Still love both!</p>
-    </div>
-
-    <!-- Profile Image -->
-    <div class="mt-10 md:mt-0 md:w-1/2">
-      <img src="assets/images/bw dp.png" alt="Suriya Kumar S" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x400?text=Upload+Your+Image';" class="w-80 md:w-96 h-80 md:h-96 rounded-full shadow-xl mx-auto" />
-    </div>
-  </section>
-
-  <!-- Down Arrow -->
-  <div class="flex justify-center animate-bounce mb-8">
-    <a href="#projects-list" class="text-yellow-500 text-3xl">↓</a>
-  </div>
-
   <!-- Projects Section -->
-  <section id="projects-list" class="px-6 md:px-16 py-20 bg-black">
-    <h2 class="text-3xl font-bold mb-8 text-center text-yellow-400">Explore My Mini Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <section class="flex flex-col items-center justify-center px-6 md:px-16 py-20 fade-in">
+    <h2 class="text-4xl font-extrabold mb-6">Projects</h2>
 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Project 1 -->
-      <div class="bg-red-200 p-6 rounded-xl shadow-xl text-center text-black">
-        <h3 class="text-4xl font-bold">Project 1</h3>
-        <h4 class="text-xl font-bold mt-4">Project Title</h4>
-        <p class="text-sm mt-4">Brief description of the project and its impact or learning outcomes.</p>
-        <a href="project1.html" class="font-semibold mt-4 inline-block hover:underline">View Project</a>
+      <div class="project-item bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Project 1</h3>
+        <p class="text-gray-300 mb-4">Description of the first project goes here.</p>
+        <a href="#" class="text-yellow-400 hover:text-yellow-300">Learn More</a>
       </div>
 
       <!-- Project 2 -->
-      <div class="bg-blue-200 p-6 rounded-xl shadow-xl text-center text-black">
-        <h3 class="text-4xl font-bold">Project 2</h3>
-        <h4 class="text-xl font-bold mt-4">Project Title</h4>
-        <p class="text-sm mt-4">Brief description of the project and its impact or learning outcomes.</p>
-        <a href="project2.html" class="font-semibold mt-4 inline-block hover:underline">View Project</a>
+      <div class="project-item bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Project 2</h3>
+        <p class="text-gray-300 mb-4">Description of the second project goes here.</p>
+        <a href="#" class="text-yellow-400 hover:text-yellow-300">Learn More</a>
       </div>
 
       <!-- Project 3 -->
-      <div class="bg-gray-100 p-6 rounded-xl shadow-xl text-center text-black">
-        <h3 class="text-4xl font-bold">Project 3</h3>
-        <h4 class="text-xl font-bold mt-4">Project Title</h4>
-        <p class="text-sm mt-4">Brief description of the project and its impact or learning outcomes.</p>
-        <a href="project3.html" class="font-semibold mt-4 inline-block hover:underline">View Project</a>
+      <div class="project-item bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-4">Project 3</h3>
+        <p class="text-gray-300 mb-4">Description of the third project goes here.</p>
+        <a href="#" class="text-yellow-400 hover:text-yellow-300">Learn More</a>
       </div>
-
-      <!-- Project 4 -->
-      <div class="bg-red-500 p-6 rounded-xl shadow-xl text-center text-black">
-        <h3 class="text-4xl font-bold">Project 4</h3>
-        <h4 class="text-xl font-bold mt-4">Project Title</h4>
-        <p class="text-sm mt-4">Brief description of the project and its impact or learning outcomes.</p>
-        <a href="project4.html" class="font-semibold mt-4 inline-block hover:underline">View Project</a>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="bg-yellow-300 p-6 rounded-xl shadow-xl text-center text-black">
-        <h3 class="text-4xl font-bold">Project 5</h3>
-        <h4 class="text-xl font-bold mt-4">Project Title</h4>
-        <p class="text-sm mt-4">Brief description of the project and its impact or learning outcomes.</p>
-        <a href="project5.html" class="font-semibold mt-4 inline-block hover:underline">View Project</a>
-      </div>
-
-      <!-- Project 6 -->
-      <div class="bg-yellow-600 p-6 rounded-xl shadow-xl text-center text-black">
-        <h3 class="text-4xl font-bold">Project 6</h3>
-        <h4 class="text-xl font-bold mt-4">Project Title</h4>
-        <p class="text-sm mt-4">Brief description of the project and its impact or learning outcomes.</p>
-        <a href="project6.html" class="font-semibold mt-4 inline-block hover:underline">View Project</a>
-      </div>
-
     </div>
   </section>
 
@@ -144,21 +123,14 @@
     <p>&copy; 2025 Suriya Kumar S. All rights reserved.</p>
   </footer>
 
-  <!-- Mobile Menu Toggle Script -->
   <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.remove("hidden");
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.remove('hidden');
     });
 
-    closeMenu.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
+    document.getElementById('close-menu').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.add('hidden');
     });
   </script>
-
 </body>
-
 </html>
