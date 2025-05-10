@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
   <title>Contact | Suriya Kumar S</title>
+  <script>
+    if (localStorage.getItem('theme') === 'light' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
@@ -14,58 +22,44 @@
   <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
     <h1 class="text-2xl font-bold"><a href="../index.html" class="transition-transform duration-300 hover:scale-105">Suriya Kumar S</a></h1>
     <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
+      <li><a href="../index.html" class="hover:text-yellow-400 transition-all duration-300 hover:scale-105">Home</a></li>
       <li><a href="about.html" class="hover:text-yellow-400 transition-all duration-300 hover:scale-105">About</a></li>
       <li><a href="projects.html" class="hover:text-yellow-400 transition-all duration-300 hover:scale-105">Projects</a></li>
-      <li><a href="#contact" class="text-yellow-400 underline">Contact</a></li>
+      <li><a href="../index.html#skills" class="hover:text-yellow-400 transition-all duration-300 hover:scale-105">Skills</a></li>
     </ul>
   </nav>
 
   <!-- Contact Section -->
-  <section class="px-6 md:px-16 py-20">
-    <h2 class="text-4xl font-extrabold text-yellow-400 mb-6">Let's Connect 🧠⚙️</h2>
-    <p class="text-lg text-gray-300 mb-10 max-w-2xl">
-      Got an idea? A question? A collaborative spark? Or just stumbled on my portfolio and thought, "Hey, this biomedical brain is interesting"? I'd love to hear from you. Fill the form or just drop an email!
-    </p>
+  <section class="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-20 space-y-12 md:space-y-0">
+    <!-- Form Section -->
+    <div class="max-w-xl md:w-1/2">
+      <h2 class="text-5xl font-extrabold mb-6 leading-relaxed">Let's Connect! 🤝</h2>
+      <p class="text-lg text-gray-300 mb-8">Have a question, a project idea, or just want to say hi? Drop a message below! 👇</p>
 
-    <div class="grid md:grid-cols-2 gap-12">
-      <!-- Contact Info -->
-      <div>
-        <h3 class="text-2xl font-bold mb-4">Contact Details</h3>
-        <p class="mb-4"><strong>Email:</strong> <a href="mailto:suriyakumar342003@gmail.com" class="text-yellow-400 hover:underline">suriyakumar342003@gmail.com</a></p>
-        <p class="mb-4"><strong>Phone:</strong> <a href="tel:+919655422437" class="text-yellow-400 hover:underline">+91 96554 22437</a></p>
-        <p class="mb-4"><strong>Location:</strong> SRM IST, Kattankulathur, Chennai</p>
+      <form action="https://formsubmit.co/suriyakumar342003@gmail.com" method="POST" class="space-y-4">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://suriyakumars.github.io/thanks.html">
 
-        <!-- Social Links -->
-        <div class="mt-6 space-x-6 text-xl">
-          <a href="https://www.linkedin.com/in/suriya-kumar-s" target="_blank" class="hover:text-yellow-400">LinkedIn 🔗</a>
-          <a href="https://github.com/suriyakumars" target="_blank" class="hover:text-yellow-400">GitHub 💻</a>
-        </div>
-      </div>
+        <input type="text" name="name" placeholder="Your Name 😊" required class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-yellow-400">
+        <input type="email" name="email" placeholder="Your Email 📧" required class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-yellow-400">
+        <textarea name="message" rows="4" placeholder="Your Message ✍️" required class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-yellow-400"></textarea>
 
-      <!-- Contact Form -->
-      <form action="mailto:suriyakumar342003@gmail.com" method="POST" enctype="text/plain" class="bg-gray-900 p-8 rounded-2xl shadow-2xl">
-        <h3 class="text-xl font-bold mb-6 text-yellow-400">Shoot me a message 📬</h3>
-
-        <div class="mb-4">
-          <label class="block mb-1 text-sm">Name</label>
-          <input type="text" name="name" required class="w-full px-4 py-2 bg-black border border-gray-700 rounded-md focus:outline-none focus:border-yellow-400"/>
-        </div>
-
-        <div class="mb-4">
-          <label class="block mb-1 text-sm">Email</label>
-          <input type="email" name="email" required class="w-full px-4 py-2 bg-black border border-gray-700 rounded-md focus:outline-none focus:border-yellow-400"/>
-        </div>
-
-        <div class="mb-4">
-          <label class="block mb-1 text-sm">Message</label>
-          <textarea name="message" rows="5" required class="w-full px-4 py-2 bg-black border border-gray-700 rounded-md focus:outline-none focus:border-yellow-400"></textarea>
-        </div>
-
-        <button type="submit" class="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:bg-yellow-300 hover:scale-105 shadow-md">
-          Send Message
+        <button type="submit" class="bg-yellow-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-110 shadow-lg">
+          Send Message 🚀
         </button>
-        <p class="text-sm text-gray-500 mt-3">*This form uses mailto; you can also email me directly.</p>
       </form>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-6 mt-8 text-2xl">
+        <a href="https://www.linkedin.com/in/suriyakumars" target="_blank" class="hover:text-yellow-400 transition-all duration-300 hover:scale-105">LinkedIn 💼</a>
+        <a href="https://www.instagram.com/the_kumar__s" target="_blank" class="hover:text-yellow-400 transition-all duration-300 hover:scale-105">Instagram 📷</a>
+        <a href="mailto:suriyakumar342003@gmail.com" class="hover:text-yellow-400 transition-all duration-300 hover:scale-105">Email ✉️</a>
+      </div>
+    </div>
+
+    <!-- Profile Image -->
+    <div class="md:w-1/2 flex justify-center md:justify-end">
+      <img src="../assets/images/profile.png" alt="Suriya Kumar" class="w-72 md:w-96 h-auto rounded-2xl shadow-xl transition duration-300 transform hover:scale-110"/>
     </div>
   </section>
 
