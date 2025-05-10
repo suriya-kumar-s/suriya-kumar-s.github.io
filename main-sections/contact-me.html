@@ -6,6 +6,21 @@
   <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
   <title>Contact | Suriya Kumar S</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenu = document.getElementById("close-menu");
+
+      menuBtn.addEventListener("click", function() {
+        mobileMenu.classList.remove("hidden");
+      });
+
+      closeMenu.addEventListener("click", function() {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  </script>
 </head>
 
 <body class="bg-black text-white dark:bg-black dark:text-white transition-colors duration-300 font-sans">
@@ -28,13 +43,13 @@
 
     <!-- Mobile Hamburger -->
     <div class="md:hidden">
-      <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">&#9776;</button>
+      <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none" aria-label="Toggle Navigation">&#9776;</button>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
-    <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6">&times;</button>
+    <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6" aria-label="Close Menu">&times;</button>
     <a href="../main-sections/about.html" class="hover:text-yellow-400">About</a>
     <a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a>
     <a href="skills.html" class="hover:text-yellow-400">Skills</a>
