@@ -70,9 +70,9 @@
     </div>
   </section>
 
-  <!-- Down Arrow -->
+  <!-- Down Arrow (Scroll Down) -->
   <div class="flex justify-center animate-bounce mb-8">
-    <a href="main-sections/projects.html" class="text-yellow-500 text-3xl hover:scale-110 transition-transform duration-300">↓</a>
+    <a href="javascript:void(0)" id="scrollDown" class="text-yellow-500 text-3xl hover:scale-110 transition-transform duration-300">↓</a>
   </div>
 
   <!-- Card Sections -->
@@ -124,6 +124,16 @@
 
     </div>
   </section>
+
+  <!-- JavaScript to scroll down -->
+  <script>
+    document.getElementById('scrollDown').addEventListener('click', function() {
+      window.scrollBy({
+        top: window.innerHeight, // Scroll down by one screen height
+        behavior: 'smooth' // Smooth scroll
+      });
+    });
+  </script>
 
 </body>
 </html>
