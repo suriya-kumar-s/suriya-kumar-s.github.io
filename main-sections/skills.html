@@ -6,6 +6,17 @@
   <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
   <title>Skills | Suriya Kumar S</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom Animations */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white dark:bg-black dark:text-white transition-colors duration-300 font-sans">
@@ -50,42 +61,42 @@
     <!-- Skill Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Technical Skills -->
-      <div class="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img src="../assets/images/skills/biomedical_signal_processing.png" alt="Biomedical Signal Processing" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Biomedical Signal Processing</h3>
       </div>
 
-      <div class="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img src="../assets/images/skills/medical_imaging.png" alt="Medical Imaging" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Medical Imaging</h3>
       </div>
 
-      <div class="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img src="../assets/images/skills/data_analysis.png" alt="Data Analysis" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Data Analysis</h3>
       </div>
 
-      <div class="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img src="../assets/images/skills/artificial_intelligence.png" alt="Artificial Intelligence" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">AI in Healthcare</h3>
       </div>
 
-      <div class="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img src="../assets/images/skills/nanotechnology.png" alt="Nanotechnology" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Nanotechnology</h3>
       </div>
 
-      <div class="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img src="../assets/images/skills/medical_devices.png" alt="Medical Devices" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Medical Devices</h3>
       </div>
 
-      <div class="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img src="../assets/images/skills/machine_learning.png" alt="Machine Learning" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Machine Learning</h3>
       </div>
 
-      <div class="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:scale-105">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img src="../assets/images/skills/3d_modeling.png" alt="3D Modeling" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">3D Modeling</h3>
       </div>
