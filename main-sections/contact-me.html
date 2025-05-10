@@ -6,7 +6,6 @@
   <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
   <title>Contact | Suriya Kumar S</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/bodymovin.min.js"></script>
 </head>
 
 <body class="bg-black text-white dark:bg-black dark:text-white transition-colors duration-300 font-sans">
@@ -50,23 +49,12 @@
       </div>
     </div>
 
-    <!-- Lottie Animation Section -->
-    <div class="md:w-1/2 flex justify-center md:justify-end" id="lottie-animation-container">
-      <div id="lottie-animation" class="w-72 md:w-96 h-auto"></div>
+    <!-- Profile Image Section -->
+    <div class="md:w-1/2 flex justify-center md:justify-end">
+      <img src="../assets/images/contact-me-image.png" alt="Suriya Kumar" class="w-72 md:w-96 h-auto rounded-2xl shadow-xl transition duration-300 transform hover:scale-110"/>
     </div>
 
   </section>
 
-  <!-- Lottie Script -->
-  <script>
-    var animation = bodymovin.loadAnimation({
-      container: document.getElementById('lottie-animation'),
-      path: 'https://assets.lottiefiles.com/packages/lf20_6b6fb8c4-45f3-44a4-af30-e2bdac54ff1d.json', // Your Lottie animation URL
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-    });
-  </script>
-  
 </body>
 </html>
