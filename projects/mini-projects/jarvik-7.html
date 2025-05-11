@@ -19,11 +19,43 @@
   </style>
 </head>
 <body class="bg-black text-white min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
+    <h1 class="text-2xl font-bold">
+      <a href="index.html" class="transition-transform duration-300 hover:scale-105 text-yellow-400">Suriya Kumar S</a>
+    </h1>
+    <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
+      <li><a href="about.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">About</a></li>
+      <li><a href="projects.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Projects</a></li>
+      <li><a href="skills.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Skills</a></li>
+      <li><a href="achievements.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Achievements</a></li>
+      <li><a href="certifications.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Certifications</a></li>
+      <li><a href="blog.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Blog</a></li>
+      <li><a href="contact-me.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Contact</a></li>
+    </ul>
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
+    <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6">&times;</button>
+    <a href="about.html" class="hover:text-yellow-400">About</a>
+    <a href="projects.html" class="hover:text-yellow-400">Projects</a>
+    <a href="skills.html" class="hover:text-yellow-400">Skills</a>
+    <a href="achievements.html" class="hover:text-yellow-400">Achievements</a>
+    <a href="certifications.html" class="hover:text-yellow-400">Certifications</a>
+    <a href="blog.html" class="hover:text-yellow-400">Blog</a>
+    <a href="contact-me.html" class="hover:text-yellow-400">Contact</a>
+  </div>
+
   <div class="p-6">
     <a href="index.html" class="text-sm text-gray-400 hover:text-white">&larr; Back to Home</a>
 
     <div class="mt-6 text-center">
-      <h1 class="text-4xl font-bold">Model of Jarvik 7 Total Artificial Heart (TAH)</h1>
+      <h1 class="text-4xl font-bold text-yellow-400">Model of Jarvik 7 Total Artificial Heart (TAH)</h1>
       <p class="text-gray-400 mt-2">An educational model to understand the working and components of the Jarvik 7 Total Artificial Heart.</p>
     </div>
 
@@ -34,13 +66,12 @@
         <p class="text-lg mt-4">This project presents a model of the Jarvik 7 Total Artificial Heart (TAH), which is a conceptual representation designed to understand the working mechanism and the various components present in the original Jarvik 7 TAH. It is not a working prototype of the actual device but serves as an educational tool to help visualize how the heart functions and the critical components involved in its operation. The Jarvik 7 heart is a pneumatically powered artificial heart, used as a bridge-to-transplant for patients suffering from end-stage heart failure.</p>
       </div>
 
-        <!-- Image of the Model -->
-          <div class="text-center">
-            <h3 class="text-xl font-semibold mb-4">Model Representation</h3>
-            <img src="jarvik-7.jpg" alt="Jarvik 7 Model Demo" />
-              </div>
+      <!-- Image of the Model -->
+      <div class="text-center">
+        <h3 class="text-xl font-semibold mb-4">Model Representation</h3>
+        <img src="jarvik-7.jpg" alt="Jarvik 7 Model Demo" />
+      </div>
 
-      
       <!-- Components Section -->
       <div class="mt-12">
         <h2 class="text-2xl font-semibold text-center mb-6">Components of the Jarvik 7 Total Artificial Heart</h2>
@@ -74,8 +105,6 @@
             </div>
           </div>
 
-
-          
           <!-- Image of the Model -->
           <div class="text-center">
             <h3 class="text-xl font-semibold mb-4">Model Representation</h3>
@@ -86,18 +115,32 @@
           <!-- Working of the Model -->
           <div class="mt-8 text-center">
             <h3 class="text-xl font-semibold mb-4">How Does It Work?</h3>
-       
             <p class="text-gray-300">The Jarvik 7 TAH model works by simulating the actual functionality of a pneumatically powered heart. The motor is used to circulate fluids, while the bottle cap valves simulate the heart's valves for blood flow regulation. The thermacol chambers mimic the heart’s ventricles, and the tubes act as grafts for fluid transfer. The nebulizer parts function as cuffs, simulating pressure control in the system.</p>
-         
-            <!-- Footer -->
-  <footer class="bg-black text-white py-8 mt-16 text-center">
-    <p>&copy; 2025 Suriya Kumar S. All rights reserved.</p>
-  </footer>
-          
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8 mt-16 text-center border-t border-gray-700">
+    <p>&copy; 2025 Suriya Kumar S. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const closeMenu = document.getElementById("close-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  </script>
+
 </body>
 </html>
