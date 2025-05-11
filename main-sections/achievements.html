@@ -14,56 +14,62 @@
     <h1 class="text-2xl font-bold">
       <a href="../index.html" class="transition-transform duration-300 hover:scale-105">Suriya Kumar S</a>
     </h1>
-
-    <!-- Desktop Nav -->
     <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
-      <li><a href="about.html" class="hover:text-yellow-400 transition duration-300">About</a></li>
-      <li><a href="projects.html" class="hover:text-yellow-400 transition duration-300">Projects</a></li>
-      <li><a href="skills.html" class="hover:text-yellow-400 transition duration-300">Skills</a></li>
-      <li><a href="achievements.html" class="text-yellow-400 underline">Achievements</a></li>
-      <li><a href="blog.html" class="hover:text-yellow-400 transition duration-300">Blog</a></li>
-      <li><a href="contact-me.html" class="hover:text-yellow-400 transition duration-300">Contact</a></li>
+      <li><a href="about.html" class="hover:text-yellow-400">About</a></li>
+      <li><a href="projects.html" class="hover:text-yellow-400">Projects</a></li>
+      <li><a href="skills.html" class="hover:text-yellow-400">Skills</a></li>
+      <li><a href="achievements.html" class="text-yellow-400 font-bold">Achievements</a></li>
+      <li><a href="blog.html" class="hover:text-yellow-400">Blog</a></li>
+      <li><a href="contact-me.html" class="hover:text-yellow-400">Contact</a></li>
     </ul>
-
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">&#9776;</button>
-    </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
-    <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6">&times;</button>
-    <a href="about.html" class="hover:text-yellow-400">About</a>
-    <a href="projects.html" class="hover:text-yellow-400">Projects</a>
-    <a href="skills.html" class="hover:text-yellow-400">Skills</a>
-    <a href="achievements.html" class="text-yellow-400 underline">Achievements</a>
-    <a href="blog.html" class="hover:text-yellow-400">Blog</a>
-    <a href="contact-me.html" class="hover:text-yellow-400">Contact</a>
-  </div>
+  <!-- Section Title -->
+  <section class="px-6 md:px-20 py-16 bg-black">
+    <h2 class="text-4xl font-extrabold text-yellow-400 text-center mb-12">🏆 Achievements & Activities</h2>
 
-  <!-- Achievements & Activities Section -->
-  <section class="bg-black text-white py-16 px-6 md:px-20">
-    <h2 class="text-4xl font-extrabold text-yellow-400 mb-10 text-center">Achievements & Activities 🏆</h2>
+    <!-- Timeline Container -->
+    <div class="relative border-l-4 border-yellow-400 ml-4 md:ml-10">
 
-    <ul class="space-y-6 text-lg leading-relaxed text-gray-300 list-disc list-inside">
-      <li><span class="text-yellow-400 font-semibold">🏅 First Prize</span> in “Med-Innovate: Disrupting Healthcare with Ideas” – IEEE EMBS Day 2025 for the topic <em>“Revolutionizing Vaccine Development with AI.”</em></li>
-      
-      <li><span class="text-yellow-400 font-semibold">📚 Completed</span> AICTE-Celonis Virtual Internship on Business Analyst Role (Apr–Jun 2024).</li>
+      <!-- Timeline Item -->
+      <div class="mb-12 ml-6">
+        <div class="absolute w-4 h-4 bg-yellow-400 rounded-full -left-2.5 top-2"></div>
+        <div class="md:flex items-center gap-6">
+          <img src="../assets/images/med-innovate.jpg" alt="Med-Innovate" class="w-full md:w-64 h-40 object-cover rounded-xl mb-4 md:mb-0 shadow-lg">
+          <div>
+            <h3 class="text-2xl font-semibold text-yellow-400">First Prize – Med-Innovate 2025</h3>
+            <p class="text-gray-300 mt-2">Secured first place at IEEE EMBS Day for the idea <em>“Revolutionizing Vaccine Development with AI.”</em></p>
+          </div>
+        </div>
+      </div>
 
-      <li><span class="text-yellow-400 font-semibold">🎙 Presented</span> a seminar on “Imaging Techniques in Biomedical Engineering” with focus on industry applications.</li>
+      <!-- Timeline Item -->
+      <div class="mb-12 ml-6">
+        <div class="absolute w-4 h-4 bg-yellow-400 rounded-full -left-2.5 top-2"></div>
+        <div class="md:flex items-center gap-6">
+          <img src="../assets/images/virtual-internship.jpg" alt="Virtual Internship" class="w-full md:w-64 h-40 object-cover rounded-xl mb-4 md:mb-0 shadow-lg">
+          <div>
+            <h3 class="text-2xl font-semibold text-yellow-400">AICTE – Celonis Business Analyst Virtual Internship</h3>
+            <p class="text-gray-300 mt-2">Completed a 10-week industry-supported internship focused on business process mining and analysis using Celonis software (April–June 2024).</p>
+          </div>
+        </div>
+      </div>
 
-      <li><span class="text-yellow-400 font-semibold">🧠 Started</span> a LinkedIn series on ECG interpretation from basics to doctor-level insights – aimed to compile into a book.</li>
+      <!-- Timeline Item -->
+      <div class="mb-12 ml-6">
+        <div class="absolute w-4 h-4 bg-yellow-400 rounded-full -left-2.5 top-2"></div>
+        <div class="md:flex items-center gap-6">
+          <img src="../assets/images/youtube-milestone.jpg" alt="YouTube Milestone" class="w-full md:w-64 h-40 object-cover rounded-xl mb-4 md:mb-0 shadow-lg">
+          <div>
+            <h3 class="text-2xl font-semibold text-yellow-400">🎬 Reached 122K Subscribers on YouTube</h3>
+            <p class="text-gray-300 mt-2">Built and grew the <strong>Tamil Devotional Beats</strong> channel focused on rural temple culture, live events, and traditions in Tamil Nadu.</p>
+          </div>
+        </div>
+      </div>
 
-      <li><span class="text-yellow-400 font-semibold">📸 Built</span> a growing YouTube channel (122K+) focusing on South Tamil Nadu Hindu traditions – blending tech and culture.</li>
+      <!-- Add More Activities Here -->
+      <!-- Template: Copy and paste more divs following the same structure -->
 
-      <li><span class="text-yellow-400 font-semibold">🎓 Participated</span> in multiple technical workshops and online certifications (LinkedIn, Coursera, etc.).</li>
-    </ul>
-
-    <div class="text-center mt-12">
-      <a href="certifications.html" class="inline-block bg-yellow-400 text-black font-semibold py-3 px-6 rounded-xl hover:bg-yellow-500 transition duration-300 shadow-md">
-        📄 View My Certifications
-      </a>
     </div>
   </section>
 
@@ -72,20 +78,5 @@
     <p>&copy; 2025 Suriya Kumar S. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for mobile menu toggle -->
-  <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.remove("hidden");
-    });
-
-    closeMenu.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-    });
-  </script>
-  
 </body>
 </html>
