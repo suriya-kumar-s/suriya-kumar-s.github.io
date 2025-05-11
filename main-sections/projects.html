@@ -14,11 +14,6 @@
       flex-direction: column;
       min-height: 100vh;
     }
-    .project-image {
-      height: 180px;
-      object-fit: cover;
-      border-radius: 0.75rem;
-    }
     .content-wrapper {
       flex: 1;
     }
@@ -90,10 +85,12 @@
 
     <!-- Project Cards -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 px-6 md:px-16 pb-16">
-    
+
       <!-- Project 1 -->
       <div class="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-yellow-500/30 transition-transform transform hover:scale-105 fade-in">
-        <img src="../assets/images/chess-game.jpg" alt="Chess Game using AI" class="w-full project-image mb-4">
+        <div class="aspect-[16/9] overflow-hidden rounded-xl mb-4">
+          <img src="../assets/images/chess-game.jpg" alt="Chess Game using AI" loading="lazy" class="w-full h-full object-cover bg-gray-800">
+        </div>
         <h2 class="text-xl font-bold">CHESS Game using AI</h2>
         <p class="text-sm text-gray-400 mt-1">May 2025</p>
         <p class="mt-3 text-sm text-yellow-400">#AI #Snakegame #Game</p>
@@ -102,7 +99,9 @@
 
       <!-- Project 2 -->
       <div class="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-yellow-500/30 transition-transform transform hover:scale-105 fade-in">
-        <img src="../assets/images/bm/jarvik-7-project.jpg" alt="Jarvik-7 Implant." class="w-full project-image mb-4">
+        <div class="aspect-[16/9] overflow-hidden rounded-xl mb-4">
+          <img src="../assets/images/bm/jarvik-7-project.jpg" alt="Jarvik-7 Implant" loading="lazy" class="w-full h-full object-cover bg-gray-800">
+        </div>
         <h2 class="text-xl font-bold">Jarvik-7 Model</h2>
         <p class="text-sm text-gray-400 mt-1">March 2025</p>
         <p class="mt-3 text-gray-300 text-sm">The World's first total artificial heart implant.</p>
@@ -112,7 +111,9 @@
 
       <!-- Project 3 -->
       <div class="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-yellow-500/30 transition-transform transform hover:scale-105 fade-in">
-        <img src="project3.jpg" alt="AI in Vaccine Development" class="w-full project-image mb-4">
+        <div class="aspect-[16/9] overflow-hidden rounded-xl mb-4">
+          <img src="../assets/images/bm/ai-vaccine-project.jpg" alt="AI in Vaccine Development" loading="lazy" class="w-full h-full object-cover bg-gray-800">
+        </div>
         <h2 class="text-xl font-bold">AI in Vaccine Development</h2>
         <p class="text-sm text-gray-400 mt-1">Feb 2025</p>
         <p class="mt-3 text-gray-300 text-sm">Won 1st prize in IEEE EMBS Med-Innovate with a proposal on how AI can revolutionize vaccine discovery.</p>
