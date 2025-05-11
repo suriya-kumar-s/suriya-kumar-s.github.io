@@ -10,11 +10,50 @@
     body {
       font-family: 'Inter', sans-serif;
     }
-    
+
     img {
       width: 100%;
       max-width: 600px;
       margin: 20px 0;
+    }
+
+    .content-section {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: #FFD93D;
+      margin-bottom: 1rem;
+    }
+
+    .section-paragraph {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: #B8B8B8;
+      text-align: justify;
+    }
+
+    .section-subheader {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-top: 2rem;
+      color: #F4C430;
+    }
+
+    .section-list {
+      margin-left: 2rem;
+      list-style-type: disc;
+      color: #D1D1D1;
+    }
+
+    .model-image {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
   </style>
 </head>
@@ -24,7 +63,7 @@
   <nav class="bg-black text-white px-6 md:px-16 py-4 fixed top-0 left-0 w-full z-50 shadow-lg">
     <div class="flex justify-between items-center">
       <h1 class="text-2xl font-bold text-yellow-400">
-        <a href="index.html" class="transition-transform duration-300 hover:scale-105">Suriya Kumar S</a>
+        <a href="index.html" class="transition-transform duration-300 hover:scale-105">Back to Home</a>
       </h1>
       <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
         <li><a href="about.html" class="hover:text-yellow-400 transition duration-300">About</a></li>
@@ -58,94 +97,85 @@
 
     <div class="mt-6 text-center">
       <h1 class="text-4xl font-bold text-yellow-400">Model of Jarvik 7 Total Artificial Heart (TAH)</h1>
-      <p class="text-gray-400 mt-2">An educational model to understand the working and components of the Jarvik 7 Total Artificial Heart.</p>
+      <p class="text-gray-400 mt-2">An in-depth educational project to understand the working mechanism, components, and functionalities of the Jarvik 7 Total Artificial Heart.</p>
     </div>
 
-    <div class="mt-12">
-      <!-- Project Intro Section -->
-      <div class="text-center">
-        <h3 class="text-xl font-semibold mb-4">Introduction to the Jarvik 7 Total Artificial Heart (TAH)</h3>
-        <p class="text-lg text-gray-300">The Jarvik 7 Total Artificial Heart (TAH) is a groundbreaking device designed to take over the functions of the human heart for patients with end-stage heart failure. This educational model represents the key components and functioning of the TAH to help visualize how it works.</p>
+    <!-- Project Explanation Section -->
+    <div class="content-section">
+      <h2 class="section-header">Introduction to the Jarvik 7 Total Artificial Heart (TAH)</h2>
+      <p class="section-paragraph">
+        The Jarvik 7 Total Artificial Heart (TAH) is one of the most remarkable innovations in medical technology, designed as a lifesaving solution for patients with end-stage heart failure. The Jarvik 7 is a pneumatically powered, total artificial heart that replaces both ventricles of the heart. This device serves as a bridge to heart transplant for patients who cannot wait for a donor heart, providing them with a mechanical heart that can keep them alive until a suitable donor is found. 
+        <br /><br />
+        Our educational model of the Jarvik 7 Total Artificial Heart (TAH) serves as an important tool for understanding how this life-saving device operates. By simplifying the complexities of the device, we aim to provide a comprehensive overview of the essential components involved in its functioning, how they interact, and their role in ensuring the heart continues to function in the absence of a natural one. The model is a conceptual representation, crafted using basic materials that replicate the main components of the actual Jarvik 7.
+      </p>
 
-        <img src="path-to-your-image/jarvik-7-model.jpg" alt="Jarvik 7 Model" />
-      </div>
+      <img class="model-image" src="path-to-your-image/jarvik-7-model.jpg" alt="Jarvik 7 Model" />
 
-      <!-- Explanation Section -->
-      <div class="mt-12 text-center">
-        <h3 class="text-xl font-semibold mb-4">Project Explanation</h3>
-        <p class="text-lg text-gray-300">Our project involves creating a simplified model of the Jarvik 7 Total Artificial Heart to explain its working mechanism. The model demonstrates how the device functions using basic materials and components, simulating the core features of the actual heart, such as its pneumatic chambers, blood pumps, and pressure regulation system.</p>
-        <img src="path-to-your-image/jarvik-7-explanation.jpg" alt="Explanation of the Project" />
-      </div>
+      <h2 class="section-header">Explanation of the Project</h2>
+      <p class="section-paragraph">
+        The project consists of a simple model designed to simulate the primary functionalities of the Jarvik 7 Total Artificial Heart. While this model is far from being an exact replica, it demonstrates how the key components of the TAH, such as the blood pumps, pneumatic chambers, and pressure regulation cuffs, work together to simulate heart functions.
+        <br /><br />
+        The model is powered by a motor that mimics the pumping action of the heart, circulating fluid through tubes that simulate blood flow. The pneumatic chambers, made from thermacol, represent the ventricles of the heart, and the valves are symbolized by bottle caps, providing an analogy to the mechanical valves in the actual Jarvik 7 heart.
+        <br /><br />
+        By creating this model, we intend to provide students, professionals, and anyone interested in medical technology with a better understanding of how this artificial heart works, its components, and the mechanisms that sustain a human being during an extended wait for a transplant. It is essential to note that this is not a working prototype of the real device but a simplified educational model to grasp its general operation and core components.
+      </p>
 
-      <!-- Components Section -->
-      <div class="mt-12">
-        <h2 class="text-2xl font-semibold text-center mb-6">Components of the Jarvik 7 Total Artificial Heart</h2>
-        <div class="space-y-8">
+      <img class="model-image" src="path-to-your-image/jarvik-7-explanation.jpg" alt="Explanation of the Project" />
+    </div>
 
-          <!-- Real Components vs Our Model -->
-          <div class="text-center">
-            <h3 class="text-xl font-semibold mb-4">Real Jarvik 7 Components vs Our Model</h3>
-            <div class="flex flex-wrap justify-center gap-8">
-              <!-- Real vs Model -->
-              <div class="w-full md:w-1/3">
-                <h4 class="text-lg font-semibold">Real Jarvik 7 Components</h4>
-                <ul class="list-disc pl-6 text-gray-300">
-                  <li>Valves (mechanical)</li>
-                  <li>Pneumatic chambers</li>
-                  <li>Blood pumps</li>
-                  <li>Cuffs for pressure regulation</li>
-                  <li>Electrical components for control</li>
-                </ul>
-              </div>
-              <div class="w-full md:w-1/3">
-                <h4 class="text-lg font-semibold">Our Model Components</h4>
-                <ul class="list-disc pl-6 text-gray-300">
-                  <li><strong>Valves:</strong> We used a bottle cap to represent the valves.</li>
-                  <li><strong>Pneumatic Chambers:</strong> Thermacol model to represent chambers.</li>
-                  <li><strong>Blood Pumps:</strong> A motor to simulate the pumping mechanism.</li>
-                  <li><strong>Cuffs for Pressure Regulation:</strong> Nebulizer parts are used to represent the cuffs.</li>
-                  <li><strong>Electrical Components:</strong> Tubes and other materials to replicate the graft and wiring system.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    <!-- Components Section -->
+    <div class="content-section">
+      <h2 class="section-header">Components of the Jarvik 7 Total Artificial Heart</h2>
+      <p class="section-paragraph">
+        The Jarvik 7 Total Artificial Heart comprises various components that work in unison to mimic the functions of a natural human heart. These components are carefully designed to perform vital tasks such as pumping blood, regulating blood pressure, and ensuring proper circulation. Understanding these components is key to understanding how this life-saving device works.
+      </p>
 
-          <!-- Image of the Model -->
-          <div class="text-center">
-            <h3 class="text-xl font-semibold mb-4">Model Representation</h3>
-            <img src="jarvik.jpg" alt="Jarvik 7 Model Demo" />
-            <p class="text-gray-300">The above image represents the educational model created to simulate the Jarvik 7 Total Artificial Heart using everyday materials.</p>
-          </div>
-
-          <!-- Working of the Model -->
-          <div class="mt-8 text-center">
-            <h3 class="text-xl font-semibold mb-4">How Does It Work?</h3>
-            <p class="text-gray-300">The Jarvik 7 TAH model works by simulating the actual functionality of a pneumatically powered heart. The motor is used to circulate fluids, while the bottle cap valves simulate the heart's valves for blood flow regulation. The thermacol chambers mimic the heart’s ventricles, and the tubes act as grafts for fluid transfer. The nebulizer parts function as cuffs, simulating pressure control in the system.</p>
-          </div>
+      <h3 class="section-subheader">Real Components vs Our Model</h3>
+      <div class="flex justify-center gap-10">
+        <div class="w-full md:w-1/3">
+          <h4 class="section-subheader">Real Jarvik 7 Components</h4>
+          <ul class="section-list">
+            <li>Mechanical valves</li>
+            <li>Pneumatic chambers for blood flow regulation</li>
+            <li>Blood pumps that circulate blood</li>
+            <li>Cuffs to regulate pressure within the heart</li>
+            <li>Electrical components for heart control and function</li>
+          </ul>
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="w-full md:w-1/3">
+          <h4 class="section-subheader">Our Model Components</h4>
+          <ul class="section-list">
+            <li><strong>Valves:</strong> Represented using bottle caps.</li>
+            <li><strong>Pneumatic Chambers:</strong> Simulated using thermacolmaterial to represent ventricles.</li>
+            <li><strong>Blood Pump:</strong> A small motor drives the pump mechanism in our model.</li>
+            <li><strong>Pressure Regulation:</strong> Simulated with adjustable plastic tubes.</li>
+            <li><strong>Control System:</strong> A simple electrical circuit controls the pumping motion.</li>
+</ul>
+</div>
+</div>
+</div>
 
-  <!-- Footer -->
-  <footer class="bg-black text-white py-8 mt-16 text-center border-t border-gray-700">
-    <p>&copy; 2025 Suriya Kumar S. All rights reserved.</p>
-  </footer>
+    
+<!-- Conclusion Section -->
+<div class="content-section">
+  <h2 class="section-header">Conclusion</h2>
+  <p class="section-paragraph">
+    In conclusion, the model of the Jarvik 7 Total Artificial Heart serves as a valuable educational tool for understanding the basic principles behind artificial heart technology. Although the device itself is complex and requires specialized materials and expertise, our model simplifies these complexities, providing a clear representation of its key components and operations.
+    <br /><br />
+    This project emphasizes the importance of innovation in healthcare technology, showcasing how engineers and scientists work tirelessly to develop life-saving solutions for people suffering from severe heart conditions. The Jarvik 7 is an extraordinary example of how mechanical engineering and medical science converge to provide hope to patients and extend their lives. Our model aims to inspire further interest in this fascinating field and encourage the development of even more sophisticated medical devices in the future.
+  </p>
+</div>
 
-  <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById("menu-btn");
-    const closeMenu = document.getElementById("close-menu");
-    const mobileMenu = document.getElementById("mobile-menu");
+<!-- Mobile Menu Toggle Script -->
+<script>
+  document.getElementById('menu-btn').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.remove("hidden");
-    });
-
-    closeMenu.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-    });
-  </script>
+  document.getElementById('close-menu').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  });
+</script>
 
 </body>
 </html>
