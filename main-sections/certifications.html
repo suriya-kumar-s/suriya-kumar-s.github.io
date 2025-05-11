@@ -6,21 +6,40 @@
   <title>My Certifications</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white">
+<body class="bg-black text-white dark:bg-black dark:text-white transition-colors duration-300 font-sans">
 
-  <!-- Navbar -->
-  <nav class="bg-yellow-600 text-black shadow-md">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Suriya Kumar</h1>
-      <ul class="flex space-x-6 font-medium">
-        <li><a href="index.html" class="hover:underline">Home</a></li>
-        <li><a href="projects.html" class="hover:underline">Projects</a></li>
-        <li><a href="certifications.html" class="underline font-bold">Certifications</a></li>
-        <li><a href="contact.html" class="hover:underline">Contact</a></li>
-      </ul>
+   <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
+    <h1 class="text-2xl font-bold">
+      <a href="../index.html" class="transition-transform duration-300 hover:scale-105">Suriya Kumar S</a>
+    </h1>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
+      <li><a href="../main-sections/about.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">About</a></li>
+      <li><a href="../main-sections/projects.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Projects</a></li>
+      <li><a href="skills.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Skills</a></li>
+      <li><a href="../main-sections/achievements.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Achievements</a></li>
+      <li><a href="../main-sections/blog.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Blog</a></li>
+      <li><a href="../main-sections/contact-me.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Contact</a></li>
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none" aria-label="Toggle Navigation">&#9776;</button>
     </div>
   </nav>
 
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
+    <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6" aria-label="Close Menu">&times;</button>
+    <a href="../main-sections/about.html" class="hover:text-yellow-400">About</a>
+    <a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a>
+    <a href="skills.html" class="hover:text-yellow-400">Skills</a>
+    <a href="../main-sections/achievements.html" class="hover:text-yellow-400">Achievements</a>
+    <a href="../main-sections/blog.html" class="hover:text-yellow-400">Blog</a>
+    <a href="../main-sections/contact-me.html" class="hover:text-yellow-400">Contact</a>
+  </div>
   <!-- Certifications Section -->
   <section id="certifications" class="py-16 px-6 sm:px-12">
     <h2 class="text-4xl font-bold text-center mb-12 text-yellow-400">My Certifications</h2>
