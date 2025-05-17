@@ -10,29 +10,10 @@
     .card {
       transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
       transform: perspective(1000px) rotateX(0deg);
-      opacity: 0;
-      animation: fadeInUp 1s forwards;
     }
     .card:hover {
       transform: scale(1.05) rotateX(3deg);
       box-shadow: 0 12px 24px rgba(255, 217, 61, 0.2);
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    #mobile-menu {
-      transition: transform 0.3s ease-in-out;
-      transform: translateX(100%);
-    }
-    #mobile-menu.open {
-      transform: translateX(0);
     }
   </style>
 </head>
