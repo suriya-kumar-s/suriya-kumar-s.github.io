@@ -1,224 +1,300 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon" />
-  <title>Skills | Suriya Kumar S</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <title>My Skills</title>
   <style>
-    .card {
-      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-      max-width: 320px;
+    /* Basic Reset & Fonts */
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      justify-content: center;
     }
-    .card:hover {
-      transform: scale(1.08);
-      box-shadow: 0 15px 30px rgba(225, 173, 1, 0.5);
+
+    .skills-container {
+      max-width: 1080px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #E1AD01;
+      margin-bottom: 3rem;
+      user-select: none;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      justify-items: center;
+    }
+
+    .card {
+      position: relative;
+      background: #1f2937;
+      border-radius: 1rem;
+      padding: 2rem 1.5rem 2.5rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      max-width: 320px;
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+      cursor: default;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(225, 173, 1, 0.85);
+      outline: none;
+    }
+
+    /* Glowing animated border */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      background: linear-gradient(270deg, #E1AD01, #FFD93D, #E1AD01, #FFD93D);
+      background-size: 800% 800%;
+      border-radius: 1rem;
+      filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      animation: gradientAnimation 10s ease infinite;
+      z-index: 0;
+    }
+
+    .card:hover::before,
+    .card:focus-within::before {
+      opacity: 1;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Content above glowing border */
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    img.skill-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1.25rem;
+      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
+      border-radius: 0.75rem;
+      background-color: #333;
+      padding: 10px;
+      object-fit: contain;
+    }
+
+    .skill-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #FFD93D;
+      margin-bottom: 1rem;
+      display: inline-block;
+      position: relative;
+      cursor: help;
+    }
+
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 220px;
+      background-color: #E1AD01;
+      color: #000;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 12px;
+      position: absolute;
+      z-index: 10;
+      bottom: 130%;
+      left: 50%;
+      margin-left: -110px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      user-select: none;
+      pointer-events: none;
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+
+    /* Tooltip arrow */
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #E1AD01 transparent transparent transparent;
+    }
+
+    /* Show tooltip on hover and focus */
+    .tooltip:hover .tooltiptext,
+    .tooltip:focus-within .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .skill-description {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 1.2rem;
+      line-height: 1.4;
+      min-height: 75px;
+    }
+
+    /* Skill level bar container */
+    .skill-level {
+      width: 80%;
+      height: 8px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: inset 0 1px 3px rgba(255,255,255,0.1);
+    }
+
+    /* Skill level fill */
+    .skill-level-fill {
+      height: 100%;
+      background: #E1AD01;
+      width: 0;
+      border-radius: 5px;
+      box-shadow: 0 0 6px #E1AD01AA;
+      transition: width 1.8s ease-in-out;
+    }
+
+    /* Animate fill on card hover or focus */
+    .card:hover .skill-level-fill,
+    .card:focus-within .skill-level-fill {
+      width: var(--level);
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
+<body>
+  <div class="skills-container" id="skills">
+    <h1>My Skills</h1>
+    <div class="cards">
+      <div class="card" tabindex="0" aria-label="EasyEDA skill card" style="--level:85%;">
+        <img src="../assets/images/skills/easyeda.png" alt="EasyEDA logo" class="skill-icon" />
+        <h3 class="skill-title tooltip" tabindex="0">
+          EasyEDA
+          <span class="tooltiptext" role="tooltip">Did you know? EasyEDA supports online collaboration!</span>
+        </h3>
+        <p class="skill-description">
+          A powerful web-based EDA tool used for designing and simulating electronic circuits. Ideal for creating PCB layouts and schematics with ease.
+        </p>
+        <div class="skill-level" aria-label="EasyEDA skill level">
+          <div class="skill-level-fill"></div>
+        </div>
+      </div>
 
-<body class="bg-black text-white font-sans transition-colors duration-300">
+      <div class="card" tabindex="0" aria-label="KiCad skill card" style="--level:75%;">
+        <img src="../assets/images/skills/kicad.png" alt="KiCad logo" class="skill-icon" />
+        <h3 class="skill-title tooltip" tabindex="0">
+          KiCad
+          <span class="tooltiptext" role="tooltip">KiCad allows 3D viewing of your PCB designs.</span>
+        </h3>
+        <p class="skill-description">
+          Open-source software for electronic design automation, perfect for creating multi-layer PCB layouts with advanced features.
+        </p>
+        <div class="skill-level" aria-label="KiCad skill level">
+          <div class="skill-level-fill"></div>
+        </div>
+      </div>
 
-  <!-- Navbar -->
-  <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
-    <h1 class="text-2xl font-bold">
-      <a href="../index.html" class="transition-transform duration-300 hover:scale-105 text-yellow-400">Suriya Kumar S</a>
-    </h1>
-    <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
-      <li><a href="about.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">About</a></li>
-      <li><a href="projects.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Projects</a></li>
-      <li><a href="skills.html" class="text-yellow-400 font-bold">Skills</a></li>
-      <li><a href="achievements.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Achievements</a></li>
-      <li><a href="certifications.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Certifications</a></li>
-      <li><a href="blog.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Blog</a></li>
-      <li><a href="contact-me.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Contact</a></li>
-    </ul>
-    <div class="md:hidden">
-      <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">&#9776;</button>
+      <div class="card" tabindex="0" aria-label="Cadence skill card" style="--level:70%;">
+        <img src="../assets/images/skills/cadence.png" alt="Cadence logo" class="skill-icon" />
+        <h3 class="skill-title tooltip" tabindex="0">
+          Cadence
+          <span class="tooltiptext" role="tooltip">Cadence is widely used in chip design by major semiconductor companies.</span>
+        </h3>
+        <p class="skill-description">
+          Professional-grade EDA software suite used for IC design, simulation, and verification in semiconductor industries.
+        </p>
+        <div class="skill-level" aria-label="Cadence skill level">
+          <div class="skill-level-fill"></div>
+        </div>
+      </div>
+
+      <div class="card" tabindex="0" aria-label="AutoCAD skill card" style="--level:80%;">
+        <img src="../assets/images/skills/autocad.png" alt="AutoCAD logo" class="skill-icon" />
+        <h3 class="skill-title tooltip" tabindex="0">
+          AutoCAD
+          <span class="tooltiptext" role="tooltip">AutoCAD supports extensive customization and automation.</span>
+        </h3>
+        <p class="skill-description">
+          Industry-standard CAD software for 2D and 3D design, widely used in engineering and architectural projects.
+        </p>
+        <div class="skill-level" aria-label="AutoCAD skill level">
+          <div class="skill-level-fill"></div>
+        </div>
+      </div>
+
+      <!-- Add more cards here as needed following the same structure -->
+
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
-    <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6">&times;</button>
-    <a href="about.html" class="hover:text-yellow-400">About</a>
-    <a href="projects.html" class="hover:text-yellow-400">Projects</a>
-    <a href="skills.html" class="text-yellow-400 font-bold">Skills</a>
-    <a href="achievements.html" class="hover:text-yellow-400">Achievements</a>
-    <a href="certifications.html" class="hover:text-yellow-400">Certifications</a>
-    <a href="blog.html" class="hover:text-yellow-400">Blog</a>
-    <a href="contact-me.html" class="hover:text-yellow-400">Contact</a>
   </div>
 
-  <!-- Skills Section -->
-  <section class="px-6 md:px-16 py-20 max-w-7xl mx-auto">
-    <h2 class="text-4xl font-extrabold mb-2 text-center text-yellow-400">Skills</h2>
-    <p class="text-center text-yellow-300 italic mb-12 max-w-md mx-auto drop-shadow-md">
-      Mastering tools & talents that bring ideas to life!
-    </p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 justify-center">
+  <script>
+    // Animate the skill bars once when page loads or when cards enter viewport
+    // For now, animate all at once after page load
 
-      <!-- Skill Card Template -->
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/easyeda.png" alt="EasyEDA" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">EasyEDA</h3>
-        <p class="text-gray-300 text-sm">
-          A powerful web-based EDA tool used for designing and simulating electronic circuits.
-          Ideal for creating PCB layouts and schematics with ease.
-        </p>
-      </div>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const fill = card.querySelector('.skill-level-fill');
+        const level = card.style.getPropertyValue('--level');
+        fill.style.width = level;
+      });
+      card.addEventListener('mouseleave', () => {
+        const fill = card.querySelector('.skill-level-fill');
+        fill.style.width = '0';
+      });
 
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/html.png" alt="HTML" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">HTML</h3>
-        <p class="text-gray-300 text-sm">
-          The foundational markup language for creating web pages and web applications.
-          Enables structuring content and integrating multimedia elements.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/css.png" alt="CSS" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">CSS</h3>
-        <p class="text-gray-300 text-sm">
-          Styles web pages with colors, layouts, and animations.
-          Provides a rich and responsive user experience on all devices.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/kicad.png" alt="KiCad" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">KiCad</h3>
-        <p class="text-gray-300 text-sm">
-          Open-source software for electronic design automation.
-          Used for schematic capture and PCB layout design in complex projects.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/cadence.png" alt="Cadence" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Cadence</h3>
-        <p class="text-gray-300 text-sm">
-          A professional EDA tool suite for IC design and verification.
-          Supports high-performance circuit simulation and analysis.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/autocad.png" alt="AutoCAD" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">AutoCAD</h3>
-        <p class="text-gray-300 text-sm">
-          Industry-leading CAD software for 2D and 3D design and drafting.
-          Essential for precise technical drawings and modeling.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/figma.png" alt="Figma" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Figma</h3>
-        <p class="text-gray-300 text-sm">
-          Collaborative interface design tool for UI/UX projects.
-          Enables real-time teamwork on prototypes and wireframes.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/canva.png" alt="Canva" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Canva</h3>
-        <p class="text-gray-300 text-sm">
-          User-friendly graphic design platform.
-          Perfect for creating social media visuals, presentations, and marketing materials.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/scriptwriting.png" alt="Scriptwriting" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Scriptwriting</h3>
-        <p class="text-gray-300 text-sm">
-          Crafting engaging and structured scripts for videos and presentations.
-          Essential for storytelling and clear communication.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/content-creation.png" alt="Content Creation" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Content Creation</h3>
-        <p class="text-gray-300 text-sm">
-          Producing original and engaging content across various platforms.
-          Helps grow audiences and build meaningful connections.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/davinci.png" alt="DaVinci Resolve" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">DaVinci Resolve</h3>
-        <p class="text-gray-300 text-sm">
-          Professional video editing software with powerful color grading tools.
-          Used to create stunning video content with cinematic quality.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/github.png" alt="GitHub" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">GitHub</h3>
-        <p class="text-gray-300 text-sm">
-          Web-based platform for version control and collaboration.
-          Facilitates managing code repositories and teamwork in software projects.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/rstudio.png" alt="R Studio" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">R Studio (Basic)</h3>
-        <p class="text-gray-300 text-sm">
-          Integrated development environment for R programming.
-          Useful for statistical computing and data analysis basics.
-        </p>
-      </div>
-
-      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-        <img src="../assets/images/skills/originlab.png" alt="OriginLab" class="w-20 h-20 mb-5" />
-        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">OriginLab (Basic)</h3>
-        <p class="text-gray-300 text-sm">
-          Data analysis and graphing software.
-          Supports scientific plotting and basic data manipulation.
-        </p>
-      </div>
-<div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
-  <img src="../assets/images/skills/javascript.png" alt="JavaScript" class="w-20 h-20 mb-5" />
-  <h3 class="text-2xl font-semibold text-yellow-400 mb-3">JavaScript</h3>
-  <p class="text-gray-300 text-sm">
-    The programming language of the web.<br />
-    Enables interactive, dynamic content and responsive web applications.
-  </p>
-</div>
-
-</div>
-</section>
-
-<script>
-  // Mobile menu toggle
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const closeMenu = document.getElementById('close-menu');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
-  });
-
-  closeMenu.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-  });
-
-  // Close mobile menu when clicking outside links (optional)
-  mobileMenu.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) {
-      mobileMenu.classList.add('hidden');
-    }
-  });
-</script>
-
+      // Also animate on focus for keyboard navigation
+      card.addEventListener('focusin', () => {
+        const fill = card.querySelector('.skill-level-fill');
+        const level = card.style.getPropertyValue('--level');
+        fill.style.width = level;
+      });
+      card.addEventListener('focusout', () => {
+        const fill = card.querySelector('.skill-level-fill');
+        fill.style.width = '0';
+      });
+    });
+  </script>
 </body>
 </html>
-
