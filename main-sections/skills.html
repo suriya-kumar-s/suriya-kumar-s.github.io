@@ -1,120 +1,198 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Creative Portfolio Landing Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Optional: Add Tailwind animation utilities -->
+  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon" />
+  <title>Skills | Suriya Kumar S</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
-    @keyframes bounce-slow {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+    .card {
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+      max-width: 320px;
     }
-    .bounce-slow {
-      animation: bounce-slow 3s ease-in-out infinite;
+    .card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 30px rgba(225, 173, 1, 0.5);
     }
   </style>
 </head>
-<body class="bg-gray-900 text-white font-sans min-h-screen flex flex-col">
 
-  <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 w-full bg-gray-800 bg-opacity-90 backdrop-blur-md shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition">Suriya Kumar S</a>
-      <ul class="flex space-x-8 text-gray-300 text-lg">
-        <li><a href="#about" class="hover:text-yellow-400 transition">About</a></li>
-        <li><a href="#projects" class="hover:text-yellow-400 transition">Projects</a></li>
-        <li><a href="#skills" class="hover:text-yellow-400 transition">Skills</a></li>
-        <li><a href="#achievements" class="hover:text-yellow-400 transition">Achievements</a></li>
-        <li><a href="#blog" class="hover:text-yellow-400 transition">Blog</a></li>
-        <li><a href="#contact" class="hover:text-yellow-400 transition">Contact</a></li>
-      </ul>
+<body class="bg-black text-white font-sans transition-colors duration-300">
+
+  <!-- Navbar -->
+
+  <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
+    <h1 class="text-2xl font-bold">
+      <a href="../index.html" class="transition-transform duration-300 hover:scale-105 text-yellow-400">Suriya Kumar S</a>
+    </h1>
+    <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
+      <li><a href="about.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">About</a></li>
+      <li><a href="projects.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Projects</a></li>
+      <li><a href="skills.html" class="text-yellow-400 font-bold">Skills</a></li>
+      <li><a href="achievements.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Achievements</a></li>
+      <li><a href="certifications.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Certifications</a></li>
+      <li><a href="blog.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Blog</a></li>
+      <li><a href="contact-me.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Contact</a></li>
+    </ul>
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">&#9776;</button>
     </div>
   </nav>
 
-  <!-- Main Landing Section -->
-  <main class="flex-grow flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto px-6 pt-24 pb-12 gap-10">
+  <!-- Mobile Menu -->
 
-    <!-- Left Text Content -->
-    <section class="flex flex-col max-w-xl space-y-6">
-      <h1 class="text-5xl font-extrabold text-yellow-400 leading-tight">
-        Hey there! 👋 I'm <span class="underline decoration-yellow-300">Suriya Kumar S</span>
-      </h1>
-      <p class="text-gray-300 text-lg">
-        Biomedical Engineering student at SRM IST, passionate about transforming healthcare with <span class="font-semibold text-yellow-300">AI, Nanotech</span>, and <span class="font-semibold text-yellow-300">innovation.</span>
-      </p>
-      <p class="italic text-yellow-400">
-        "Exploring the unseen, solving the unknown. 🚀"
-      </p>
-      <div class="flex space-x-4 mt-4">
-        <a href="#projects" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-5 py-3 rounded-lg font-semibold shadow-lg transition transform hover:-translate-y-1">
-          View Projects
-        </a>
-        <a href="#contact" class="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 px-5 py-3 rounded-lg font-semibold shadow-lg transition">
-          Get in Touch
-        </a>
-      </div>
-
-      <div class="mt-6 text-yellow-300 animate-pulse max-w-xs">
-        ⚡ Fun fact: I can explain ECGs better than my heartbeat! 💓
-      </div>
-    </section>
-
-    <!-- Right Image -->
-    <section class="w-72 md:w-96">
-      <img 
-        src="https://i.ibb.co/5vZTrVH/suriya-transparent.png" 
-        alt="Suriya Kumar S" 
-        class="rounded-xl shadow-2xl ring-4 ring-yellow-400 hover:scale-105 transition-transform"
-      />
-      <div class="text-center mt-2 text-yellow-400 bounce-slow select-none">
-        👀 Peek-a-boo!
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Scroll Down Arrow -->
-  <div class="flex justify-center mb-12 animate-bounce">
-    <a href="#about" aria-label="Scroll down">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-      </svg>
-    </a>
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
+    <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6">&times;</button>
+    <a href="about.html" class="hover:text-yellow-400">About</a>
+    <a href="projects.html" class="hover:text-yellow-400">Projects</a>
+    <a href="skills.html" class="text-yellow-400 font-bold">Skills</a>
+    <a href="achievements.html" class="hover:text-yellow-400">Achievements</a>
+    <a href="certifications.html" class="hover:text-yellow-400">Certifications</a>
+    <a href="blog.html" class="hover:text-yellow-400">Blog</a>
+    <a href="contact-me.html" class="hover:text-yellow-400">Contact</a>
   </div>
 
-  <!-- Dummy Sections for navigation demonstration -->
-  <section id="about" class="max-w-4xl mx-auto text-gray-300 px-6 py-16 border-t border-gray-700">
-    <h2 class="text-3xl font-bold text-yellow-400 mb-4">About Me</h2>
-    <p>Biomedical engineering student passionate about healthcare innovation, AI, and nanotechnology.</p>
-  </section>
-  <section id="projects" class="max-w-4xl mx-auto text-gray-300 px-6 py-16 border-t border-gray-700">
-    <h2 class="text-3xl font-bold text-yellow-400 mb-4">Projects</h2>
-    <p>Some cool projects coming soon! Stay tuned 🚀</p>
-  </section>
-  <section id="skills" class="max-w-4xl mx-auto text-gray-300 px-6 py-16 border-t border-gray-700">
-    <h2 class="text-3xl font-bold text-yellow-400 mb-4">Skills</h2>
-    <p>Biomedical instrumentation, AI, nanotech, web dev, and more.</p>
-  </section>
-  <section id="achievements" class="max-w-4xl mx-auto text-gray-300 px-6 py-16 border-t border-gray-700">
-    <h2 class="text-3xl font-bold text-yellow-400 mb-4">Achievements</h2>
-    <p>First prize winner at IEEE EMBS Day 2025 and many certifications.</p>
-  </section>
-  <section id="blog" class="max-w-4xl mx-auto text-gray-300 px-6 py-16 border-t border-gray-700">
-    <h2 class="text-3xl font-bold text-yellow-400 mb-4">Blog</h2>
-    <p>Sharing insights on healthcare, tech, and personal growth.</p>
-  </section>
-  <section id="contact" class="max-w-4xl mx-auto text-gray-300 px-6 py-16 border-t border-gray-700">
-    <h2 class="text-3xl font-bold text-yellow-400 mb-4">Contact Me</h2>
-    <p>Reach out for collaborations or just to say hi! 📬</p>
-  </section>
+  <!-- Skills Section -->
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-400 text-center py-6 mt-auto">
-    © 2025 Suriya Kumar S. All rights reserved.
-  </footer>
+  <section class="px-6 md:px-16 py-20 max-w-7xl mx-auto">
+    <h2 class="text-4xl font-extrabold mb-2 text-center text-yellow-400">Skills ⚡</h2>
+    <p class="text-center text-yellow-300 italic mb-12 max-w-md mx-auto drop-shadow-md">
+      Mastering tools & talents that bring ideas to life! 🎯
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 justify-center">
 
+      <!-- Skill Cards -->
+
+      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+        <img src="../assets/images/skills/easyeda.png" alt="EasyEDA" class="w-20 h-20 mb-5" />
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">EasyEDA 🛠️</h3>
+        <p class="text-gray-300 text-sm">
+          A powerful web-based EDA tool used for designing and simulating electronic circuits.
+          Ideal for creating PCB layouts and schematics with ease.
+        </p>
+      </div>
+
+      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+        <img src="../assets/images/skills/html.png" alt="HTML" class="w-20 h-20 mb-5" />
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">HTML 🌐</h3>
+        <p class="text-gray-300 text-sm">
+          The foundational markup language for creating web pages and web applications.
+          Enables structuring content and integrating multimedia elements.
+        </p>
+      </div>
+
+      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+        <img src="../assets/images/skills/css.png" alt="CSS" class="w-20 h-20 mb-5" />
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">CSS 🎨</h3>
+        <p class="text-gray-300 text-sm">
+          Styles web pages with colors, layouts, and animations.
+          Provides a rich and responsive user experience on all devices.
+        </p>
+      </div>
+
+      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+        <img src="../assets/images/skills/kicad.png" alt="KiCad" class="w-20 h-20 mb-5" />
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">KiCad 📐</h3>
+        <p class="text-gray-300 text-sm">
+          Open-source software for electronic design automation.
+          Used for schematic capture and PCB layout design in complex projects.
+        </p>
+      </div>
+
+      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+        <img src="../assets/images/skills/cadence.png" alt="Cadence" class="w-20 h-20 mb-5" />
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Cadence 💻</h3>
+        <p class="text-gray-300 text-sm">
+          A professional EDA tool suite for IC design and verification.
+          Supports high-performance circuit simulation and analysis.
+        </p>
+      </div>
+
+      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+        <img src="../assets/images/skills/autocad.png" alt="AutoCAD" class="w-20 h-20 mb-5" />
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">AutoCAD 🏗️</h3>
+        <p class="text-gray-300 text-sm">
+          Industry-leading CAD software for 2D and 3D design and drafting.
+          Essential for precise technical drawings and modeling.
+        </p>
+      </div>
+
+      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+        <img src="../assets/images/skills/figma.png" alt="Figma" class="w-20 h-20 mb-5" />
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Figma 🎛️</h3>
+        <p class="text-gray-300 text-sm">
+          Collaborative interface design tool for UI/UX projects.
+          Enables real-time teamwork on prototypes and wireframes.
+        </p>
+      </div>
+
+      <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+        <img src="../assets/images/skills/canva.png" alt="Canva" class="w-20 h-20 mb-5" />
+        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Canva 🖼️</h3>
+        <p class="text-gray-300 text-sm">
+          User-friendly graphic design platform.
+          Perfect for creating social media visuals, presentations, and marketing materials.
+        </p>
+      </div>
+
+     <div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+  <img src="../assets/images/skills/scriptwriting.png" alt="Scriptwriting" class="w-20 h-20 mb-5" />
+  <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Scriptwriting ✍️</h3>
+  <p class="text-gray-300 text-sm">
+    Crafting engaging and structured scripts for videos and presentations.<br />
+    Skills include storyboarding and pacing for maximum impact.
+  </p>
+</div>
+
+<div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+  <img src="../assets/images/skills/video-editing.png" alt="Video Editing" class="w-20 h-20 mb-5" />
+  <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Video Editing 🎬</h3>
+  <p class="text-gray-300 text-sm">
+    Skilled in cutting, arranging, and enhancing video footage.<br />
+    Using software like DaVinci Resolve for professional results.
+  </p>
+</div>
+
+<div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+  <img src="../assets/images/skills/github.png" alt="GitHub" class="w-20 h-20 mb-5" />
+  <h3 class="text-2xl font-semibold text-yellow-400 mb-3">GitHub 🐙</h3>
+  <p class="text-gray-300 text-sm">
+    Version control and collaborative development platform.<br />
+    Essential for managing code repositories and teamwork.
+  </p>
+</div>
+
+<div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+  <img src="../assets/images/skills/r-studio.png" alt="R Studio" class="w-20 h-20 mb-5" />
+  <h3 class="text-2xl font-semibold text-yellow-400 mb-3">R Studio 📊</h3>
+  <p class="text-gray-300 text-sm">
+    Integrated development environment for R programming.<br />
+    Used for statistical computing and graphics in data analysis.
+  </p>
+</div>
+
+<div class="card flex flex-col items-center p-8 bg-gray-900 rounded-xl hover:shadow-yellow-500/60 text-center">
+  <img src="../assets/images/skills/originlab.png" alt="OriginLab" class="w-20 h-20 mb-5" />
+  <h3 class="text-2xl font-semibold text-yellow-400 mb-3">OriginLab 📈</h3>
+  <p class="text-gray-300 text-sm">
+    Data analysis and graphing software.<br />
+    Helps in creating publication-quality graphs and performing advanced analysis.
+  </p>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenuBtn = document.getElementById('close-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+  });
+
+  closeMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+</script>
 </body>
 </html>
