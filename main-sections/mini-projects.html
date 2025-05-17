@@ -2,35 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mini Projects | Suriya Kumar S</title>
-  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white font-sans">
 
   <!-- Navbar -->
-  <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-800">
-    <h1 class="text-2xl font-bold">
-      <a href="../index.html" class="hover:text-yellow-400 transition duration-300">Suriya Kumar S</a>
-    </h1>
-    <ul class="hidden md:flex space-x-6 text-sm uppercase font-medium">
-      <li><a href="../main-sections/about.html" class="hover:text-yellow-400">About</a></li>
-      <li><a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a></li>
-      <li><a href="skills.html" class="hover:text-yellow-400">Skills</a></li>
-      <li><a href="../main-sections/achievements.html" class="hover:text-yellow-400">Achievements</a></li>
-      <li><a href="../main-sections/blog.html" class="hover:text-yellow-400">Blog</a></li>
-      <li><a href="../main-sections/contact-me.html" class="hover:text-yellow-400">Contact</a></li>
-    </ul>
-    <!-- Mobile Menu Button -->
+  <header class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
+    <a href="../index.html" class="text-2xl font-bold tracking-wide hover:text-yellow-400 transition">Suriya Kumar S</a>
+    <nav class="hidden md:flex space-x-6 text-sm uppercase font-semibold">
+      <a href="../main-sections/about.html" class="hover:text-yellow-400">About</a>
+      <a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a>
+      <a href="skills.html" class="hover:text-yellow-400">Skills</a>
+      <a href="../main-sections/achievements.html" class="hover:text-yellow-400">Achievements</a>
+      <a href="../main-sections/blog.html" class="hover:text-yellow-400">Blog</a>
+      <a href="../main-sections/contact-me.html" class="hover:text-yellow-400">Contact</a>
+    </nav>
     <div class="md:hidden">
       <button id="menu-btn" class="text-yellow-400 text-3xl">&#9776;</button>
     </div>
-  </nav>
+  </header>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg text-center font-semibold">
-    <button id="close-menu" class="absolute top-5 right-6 text-yellow-400 text-3xl">&times;</button>
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-xl font-semibold">
+    <button id="close-menu" class="absolute top-6 right-6 text-yellow-400 text-4xl">&times;</button>
     <a href="../main-sections/about.html" class="hover:text-yellow-400">About</a>
     <a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a>
     <a href="skills.html" class="hover:text-yellow-400">Skills</a>
@@ -40,76 +37,62 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="px-6 md:px-16 py-20 flex flex-col md:flex-row items-center justify-between gap-12">
-    <div class="md:w-1/2">
-      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-        Mini Projects<br><span class="text-yellow-400">Ideas in Action</span>
-      </h2>
-      <p class="text-lg text-gray-400 mb-6">
-        Dive into a collection of my hands-on biomedical engineering projects, where curiosity meets creation.
-      </p>
-      <div class="space-x-4">
-        <a href="#projects-list" class="bg-yellow-400 text-black font-bold px-5 py-3 rounded-full hover:bg-yellow-300 transition">Explore Projects</a>
-        <a href="../main-sections/contact-me.html" class="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-5 py-3 rounded-full transition font-bold">Let's Connect</a>
-      </div>
-      <p class="mt-6 italic text-sm text-gray-500">P.S. I debug faster after coffee ☕</p>
-    </div>
-    <div class="md:w-1/2 flex justify-center">
-      <img src="../assets/images/bw dp.png" alt="Suriya Kumar" class="rounded-full w-72 h-72 object-cover shadow-2xl" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=No+Image';"/>
+  <section class="text-center py-20 px-6 md:px-16">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-yellow-400 mb-6">Mini Projects</h1>
+    <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-6">Turning Ideas into Action — Here’s a showcase of my hands-on mini projects in Biomedical Engineering!</p>
+    <div class="flex justify-center space-x-4 mt-4">
+      <a href="#projects" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold hover:bg-yellow-300">Explore</a>
+      <a href="../main-sections/contact-me.html" class="border border-yellow-400 px-6 py-3 rounded-full font-bold text-yellow-400 hover:bg-yellow-500 hover:text-black">Let's Connect</a>
     </div>
   </section>
 
-  <!-- Down Arrow -->
-  <div class="text-center animate-bounce mb-6">
-    <a href="#projects-list" class="text-yellow-400 text-3xl">↓</a>
-  </div>
+  <!-- Projects Section -->
+  <section id="projects" class="px-6 md:px-16 py-16 bg-gray-900">
+    <h2 class="text-3xl font-bold text-center text-white mb-12">Projects Showcase</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  <!-- Projects Grid -->
-  <section id="projects-list" class="px-6 md:px-16 py-20 bg-black">
-    <h2 class="text-3xl font-bold text-center text-yellow-400 mb-10">Explore My Mini Projects</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-      <!-- Example Project Card -->
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-yellow-400 transition">
-        <h3 class="text-yellow-300 text-2xl font-bold">Project 1</h3>
-        <h4 class="mt-2 font-semibold">Project Title</h4>
-        <p class="text-sm text-gray-400 mt-3">Brief description of the project and key outcomes or challenges solved.</p>
-        <a href="project1.html" class="text-yellow-400 inline-block mt-4 font-semibold hover:underline">View Project →</a>
+      <!-- Project Card -->
+      <div class="bg-white text-black rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h3 class="text-2xl font-bold">Project 1</h3>
+        <p class="mt-3 text-sm text-gray-700">Brief description of the project and its outcome or insight.</p>
+        <a href="project1.html" class="mt-4 inline-block text-blue-600 hover:underline font-semibold">View More</a>
       </div>
 
-      <!-- Repeat for more projects -->
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-yellow-400 transition">
-        <h3 class="text-yellow-300 text-2xl font-bold">Project 2</h3>
-        <h4 class="mt-2 font-semibold">Project Title</h4>
-        <p class="text-sm text-gray-400 mt-3">Brief description of the project and key outcomes or challenges solved.</p>
-        <a href="project2.html" class="text-yellow-400 inline-block mt-4 font-semibold hover:underline">View Project →</a>
+      <!-- Project Card -->
+      <div class="bg-white text-black rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h3 class="text-2xl font-bold">Project 2</h3>
+        <p class="mt-3 text-sm text-gray-700">Brief description of the project and its outcome or insight.</p>
+        <a href="project2.html" class="mt-4 inline-block text-blue-600 hover:underline font-semibold">View More</a>
       </div>
 
-      <!-- Add more project cards as needed -->
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-yellow-400 transition">
-        <h3 class="text-yellow-300 text-2xl font-bold">Project 3</h3>
-        <h4 class="mt-2 font-semibold">Project Title</h4>
-        <p class="text-sm text-gray-400 mt-3">Brief description of the project and key outcomes or challenges solved.</p>
-        <a href="project3.html" class="text-yellow-400 inline-block mt-4 font-semibold hover:underline">View Project →</a>
+      <!-- Project Card -->
+      <div class="bg-white text-black rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h3 class="text-2xl font-bold">Project 3</h3>
+        <p class="mt-3 text-sm text-gray-700">Brief description of the project and its outcome or insight.</p>
+        <a href="project3.html" class="mt-4 inline-block text-blue-600 hover:underline font-semibold">View More</a>
+      </div>
+
+      <!-- Add more cards as needed -->
+      <div class="bg-white text-black rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h3 class="text-2xl font-bold">Project 4</h3>
+        <p class="mt-3 text-sm text-gray-700">Brief description of the project and its outcome or insight.</p>
+        <a href="project4.html" class="mt-4 inline-block text-blue-600 hover:underline font-semibold">View More</a>
+      </div>
+
+      <div class="bg-white text-black rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h3 class="text-2xl font-bold">Project 5</h3>
+        <p class="mt-3 text-sm text-gray-700">Brief description of the project and its outcome or insight.</p>
+        <a href="project5.html" class="mt-4 inline-block text-blue-600 hover:underline font-semibold">View More</a>
+      </div>
+
+      <div class="bg-white text-black rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h3 class="text-2xl font-bold">Project 6</h3>
+        <p class="mt-3 text-sm text-gray-700">Brief description of the project and its outcome or insight.</p>
+        <a href="project6.html" class="mt-4 inline-block text-blue-600 hover:underline font-semibold">View More</a>
       </div>
 
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-white py-8 text-center border-t border-gray-800">
-    <p class="text-sm">&copy; 2025 Suriya Kumar S. All rights reserved.</p>
-  </footer>
-
-  <!-- Mobile Menu Script -->
-  <script>
-    document.getElementById("menu-btn").addEventListener("click", () => {
-      document.getElementById("mobile-menu").classList.remove("hidden");
-    });
-    document.getElementById("close-menu").addEventListener("click", () => {
-      document.getElementById("mobile-menu").classList.add("hidden");
-    });
-  </script>
-
-</body>
-</html>
+  <foot
