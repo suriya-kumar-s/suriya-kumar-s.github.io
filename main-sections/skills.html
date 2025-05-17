@@ -1,77 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Skills</title>
+  <title>Attractive Skill Cards</title>
   <style>
-    /* Basic Reset & Fonts */
+    /* Reset and base styles */
     body {
       margin: 0;
-      padding: 40px 20px;
+      background: #121212;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #fff;
+      color: #eee;
       display: flex;
       justify-content: center;
+      padding: 50px 20px;
+      min-height: 100vh;
     }
 
     .skills-container {
-      max-width: 1080px;
+      max-width: 960px;
       width: 100%;
       text-align: center;
     }
 
     h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #E1AD01;
-      margin-bottom: 3rem;
+      color: #e1ad01;
+      font-size: 3.2rem;
+      margin-bottom: 50px;
       user-select: none;
+      text-shadow: 0 0 8px #e1ad01aa;
     }
 
+    /* Cards grid */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-      justify-items: center;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 30px;
     }
 
+    /* Card styles */
     .card {
       position: relative;
-      background: #1f2937;
-      border-radius: 1rem;
-      padding: 2rem 1.5rem 2.5rem;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(145deg, #222, #1a1a1a);
+      border-radius: 20px;
+      box-shadow:
+        0 8px 15px rgba(225,173,1,0.4),
+        inset 0 0 8px #e1ad01cc;
+      padding: 30px 25px 40px;
+      cursor: pointer;
       overflow: hidden;
-      max-width: 320px;
-      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-      cursor: default;
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
+    /* 3D tilt effect on hover */
     .card:hover,
     .card:focus-within {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(225, 173, 1, 0.85);
+      transform: perspective(700px) rotateX(6deg) rotateY(10deg) scale(1.05);
+      box-shadow:
+        0 20px 30px rgba(225,173,1,0.75),
+        inset 0 0 18px #f4c430ff;
       outline: none;
+      z-index: 2;
     }
 
     /* Glowing animated border */
     .card::before {
       content: "";
       position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      background: linear-gradient(270deg, #E1AD01, #FFD93D, #E1AD01, #FFD93D);
-      background-size: 800% 800%;
-      border-radius: 1rem;
-      filter: blur(8px);
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      animation: gradientAnimation 10s ease infinite;
-      z-index: 0;
+      inset: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(270deg, #e1ad01, #ffd93d, #f4c430, #e1ad01);
+      background-size: 600% 600%;
+      animation: borderGlow 12s linear infinite;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.4;
+      transition: opacity 0.4s ease;
+      z-index: 1;
     }
 
     .card:hover::before,
@@ -79,37 +90,69 @@
       opacity: 1;
     }
 
-    @keyframes gradientAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @keyframes borderGlow {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
     }
 
-    /* Content above glowing border */
-    .card > * {
+    /* Skill icon */
+    .skill-icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
+      background: #333;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 10px #e1ad0144;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
-      z-index: 1;
+      overflow: visible;
     }
 
-    img.skill-icon {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 1.25rem;
-      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
-      border-radius: 0.75rem;
-      background-color: #333;
-      padding: 10px;
-      object-fit: contain;
+    /* Sparkle animation on icon */
+    .skill-icon::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #fff8 30%, transparent 70%);
+      border-radius: 50%;
+      filter: drop-shadow(0 0 8px #fff);
+      opacity: 0;
+      transform: scale(0.8) rotate(45deg);
+      animation: sparkle 3.5s ease-in-out infinite;
+      pointer-events: none;
     }
 
+    .card:hover .skill-icon::after,
+    .card:focus-within .skill-icon::after {
+      opacity: 1;
+      transform: scale(1.1) rotate(0deg);
+    }
+
+    .card:hover .skill-icon,
+    .card:focus-within .skill-icon {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px #e1ad01cc;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0.8) rotate(45deg); }
+      50% { opacity: 1; transform: scale(1.1) rotate(0deg); }
+    }
+
+    /* Skill title */
     .skill-title {
-      font-size: 1.9rem;
+      font-size: 1.85rem;
       font-weight: 700;
-      color: #FFD93D;
-      margin-bottom: 1rem;
-      display: inline-block;
+      color: #ffd93d;
+      margin-bottom: 15px;
       position: relative;
+      user-select: none;
       cursor: help;
+      display: inline-block;
     }
 
     /* Tooltip container */
@@ -122,24 +165,25 @@
     .tooltip .tooltiptext {
       visibility: hidden;
       width: 220px;
-      background-color: #E1AD01;
-      color: #000;
+      background-color: #f4c430;
+      color: #1a1a1a;
       text-align: center;
-      border-radius: 6px;
-      padding: 8px 12px;
+      border-radius: 12px;
+      padding: 10px 15px;
       position: absolute;
       z-index: 10;
-      bottom: 130%;
+      bottom: 125%;
       left: 50%;
       margin-left: -110px;
       opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      transform: scale(0.8);
+      transition: opacity 0.3s ease, transform 0.3s ease;
       font-weight: 600;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
       user-select: none;
       pointer-events: none;
-      font-size: 0.9rem;
-      line-height: 1.2;
+      font-size: 1rem;
+      line-height: 1.3;
     }
 
     /* Tooltip arrow */
@@ -148,10 +192,10 @@
       position: absolute;
       top: 100%;
       left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
+      margin-left: -7px;
+      border-width: 7px;
       border-style: solid;
-      border-color: #E1AD01 transparent transparent transparent;
+      border-color: #f4c430 transparent transparent transparent;
     }
 
     /* Show tooltip on hover and focus */
@@ -159,47 +203,55 @@
     .tooltip:focus-within .tooltiptext {
       visibility: visible;
       opacity: 1;
+      transform: scale(1);
       pointer-events: auto;
     }
 
+    /* Skill description */
     .skill-description {
-      font-size: 0.95rem;
-      color: #ccc;
-      margin-bottom: 1.2rem;
-      line-height: 1.4;
+      font-size: 1rem;
+      color: #bbb;
+      margin-bottom: 25px;
       min-height: 75px;
+      line-height: 1.5;
+      user-select: text;
     }
 
-    /* Skill level bar container */
+    /* Skill level bar */
     .skill-level {
       width: 80%;
-      height: 8px;
-      background: #333;
-      border-radius: 5px;
-      overflow: hidden;
+      height: 12px;
+      background: #2a2a2a;
+      border-radius: 12px;
       margin: 0 auto;
-      box-shadow: inset 0 1px 3px rgba(255,255,255,0.1);
+      box-shadow: inset 0 2px 6px #0008;
+      overflow: hidden;
     }
 
     /* Skill level fill */
     .skill-level-fill {
       height: 100%;
-      background: #E1AD01;
       width: 0;
-      border-radius: 5px;
-      box-shadow: 0 0 6px #E1AD01AA;
-      transition: width 1.8s ease-in-out;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #ffd93d, #f4c430);
+      box-shadow: 0 0 12px #f4c430aa;
+      transform-origin: left center;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Animate fill on card hover or focus */
+    /* Animate fill on card hover/focus */
     .card:hover .skill-level-fill,
     .card:focus-within .skill-level-fill {
       width: var(--level);
     }
 
-    @media (max-width: 400px) {
+    /* Responsive */
+    @media (max-width: 450px) {
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
+      }
+      .card {
+        padding: 25px 20px 35px;
       }
     }
   </style>
@@ -254,45 +306,28 @@
         <img src="../assets/images/skills/autocad.png" alt="AutoCAD logo" class="skill-icon" />
         <h3 class="skill-title tooltip" tabindex="0">
           AutoCAD
-          <span class="tooltiptext" role="tooltip">AutoCAD supports extensive customization and automation.</span>
-        </h3>
+          <span class="tooltiptext" role="tooltip">AutoCAD supports extensive 2D and 3D modeling capabilities.</span>
         <p class="skill-description">
-          Industry-standard CAD software for 2D and 3D design, widely used in engineering and architectural projects.
+          Industry-standard CAD software for precise 2D drafting and 3D modeling, used widely in engineering and architecture.
         </p>
         <div class="skill-level" aria-label="AutoCAD skill level">
           <div class="skill-level-fill"></div>
         </div>
-      </div>
+      </div> <!-- end of card -->
 
-      <!-- Add more cards here as needed following the same structure -->
-
-    </div>
-  </div>
+    </div> <!-- end of cards container -->
+  </div> <!-- end of skills-container -->
 
   <script>
-    // Animate the skill bars once when page loads or when cards enter viewport
-    // For now, animate all at once after page load
-
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        const fill = card.querySelector('.skill-level-fill');
-        const level = card.style.getPropertyValue('--level');
-        fill.style.width = level;
-      });
-      card.addEventListener('mouseleave', () => {
-        const fill = card.querySelector('.skill-level-fill');
-        fill.style.width = '0';
-      });
-
-      // Also animate on focus for keyboard navigation
-      card.addEventListener('focusin', () => {
-        const fill = card.querySelector('.skill-level-fill');
-        const level = card.style.getPropertyValue('--level');
-        fill.style.width = level;
-      });
-      card.addEventListener('focusout', () => {
-        const fill = card.querySelector('.skill-level-fill');
-        fill.style.width = '0';
+    // On page load, trigger the fill animation
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.skill-level-fill').forEach((bar) => {
+        const parent = bar.parentElement.parentElement;
+        const level = getComputedStyle(parent).getPropertyValue('--level') || '80%';
+        // Animate to the specified width
+        setTimeout(() => {
+          bar.style.width = level.trim();
+        }, 300);
       });
     });
   </script>
