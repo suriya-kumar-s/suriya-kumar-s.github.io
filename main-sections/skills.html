@@ -10,13 +10,23 @@
     .card {
       transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
       transform: perspective(1000px) rotateX(0deg);
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
     }
     .card:hover {
       transform: scale(1.05) rotateX(3deg);
       box-shadow: 0 12px 24px rgba(255, 217, 61, 0.2);
     }
-
-    /* Slide-in Mobile Menu */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     #mobile-menu {
       transition: transform 0.3s ease-in-out;
       transform: translateX(100%);
@@ -34,18 +44,15 @@
     <h1 class="text-2xl font-bold">
       <a href="../index.html" class="transition-transform duration-300 hover:scale-105">Suriya Kumar S</a>
     </h1>
-
-    <!-- Desktop Nav -->
     <ul class="hidden md:flex space-x-6 text-sm uppercase font-semibold">
       <li><a href="../main-sections/about.html" class="hover:text-yellow-400 transition duration-300">About</a></li>
       <li><a href="../main-sections/projects.html" class="hover:text-yellow-400 transition duration-300">Projects</a></li>
       <li><a href="skills.html" class="text-yellow-400 underline underline-offset-4">Skills</a></li>
       <li><a href="../main-sections/achievements.html" class="hover:text-yellow-400 transition duration-300">Achievements</a></li>
+      <li><a href="../main-sections/certifications.html" class="hover:text-yellow-400">Certifications</a></li>
       <li><a href="../main-sections/blog.html" class="hover:text-yellow-400 transition duration-300">Blog</a></li>
       <li><a href="../main-sections/contact-me.html" class="hover:text-yellow-400 transition duration-300">Contact</a></li>
     </ul>
-
-    <!-- Hamburger -->
     <div class="md:hidden">
       <button id="menu-btn" class="text-yellow-400 text-3xl">&#9776;</button>
     </div>
@@ -58,6 +65,7 @@
     <a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a>
     <a href="skills.html" class="text-yellow-400 underline underline-offset-4">Skills</a>
     <a href="../main-sections/achievements.html" class="hover:text-yellow-400">Achievements</a>
+    <a href="../main-sections/certifications.html" class="hover:text-yellow-400">Certifications</a>
     <a href="../main-sections/blog.html" class="hover:text-yellow-400">Blog</a>
     <a href="../main-sections/contact-me.html" class="hover:text-yellow-400">Contact</a>
   </div>
@@ -65,45 +73,35 @@
   <!-- Skills Section -->
   <section class="px-6 md:px-16 py-20">
     <h2 class="text-4xl font-extrabold mb-12 text-center text-yellow-400 animate-pulse">Skills</h2>
-
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <!-- Loop Card Template -->
-      <!-- Repeat for each skill below -->
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-xl transition duration-300 ease-in-out">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/biomedical_signal_processing.png" alt="Biomedical Signal Processing" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Biomedical Signal Processing</h3>
       </div>
-
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-xl transition duration-300">
+      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/medical_imaging.png" alt="Medical Imaging" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Medical Imaging</h3>
       </div>
-
       <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/data_analysis.png" alt="Data Analysis" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Data Analysis</h3>
       </div>
-
       <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/artificial_intelligence.png" alt="AI in Healthcare" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">AI in Healthcare</h3>
       </div>
-
       <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/nanotechnology.png" alt="Nanotechnology" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Nanotechnology</h3>
       </div>
-
       <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/medical_devices.png" alt="Medical Devices" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Medical Devices</h3>
       </div>
-
       <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/machine_learning.png" alt="Machine Learning" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">Machine Learning</h3>
       </div>
-
       <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/3d_modeling.png" alt="3D Modeling" class="w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold text-yellow-500">3D Modeling</h3>
@@ -126,127 +124,6 @@
       mobileMenu.classList.remove('open');
     });
   </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
-  <title>Skills | Suriya Kumar S</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    /* Custom Animations */
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      opacity: 0.9;
-    }
-  </style>
-</head>
 
-<body class="bg-black text-white dark:bg-black dark:text-white transition-colors duration-300 font-sans">
-
-  <!-- Navbar -->
-  <nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
-    <h1 class="text-2xl font-bold">
-      <a href="../index.html" class="transition-transform duration-300 hover:scale-105">Suriya Kumar S</a>
-    </h1>
-
-    <!-- Desktop Nav -->
-    <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
-      <li><a href="../main-sections/about.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">About</a></li>
-      <li><a href="../main-sections/projects.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Projects</a></li>
-      <li><a href="skills.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Skills</a></li>
-      <li><a href="../main-sections/achievements.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Achievements</a></li>
-      <li><a href="../main-sections/blog.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Blog</a></li>
-      <li><a href="../main-sections/contact-me.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Contact</a></li>
-    </ul>
-
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">&#9776;</button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
-    <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6">&times;</button>
-    <a href="../main-sections/about.html" class="hover:text-yellow-400">About</a>
-    <a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a>
-    <a href="skills.html" class="hover:text-yellow-400">Skills</a>
-    <a href="../main-sections/achievements.html" class="hover:text-yellow-400">Achievements</a>
-    <a href="../main-sections/blog.html" class="hover:text-yellow-400">Blog</a>
-    <a href="../main-sections/contact-me.html" class="hover:text-yellow-400">Contact</a>
-  </div>
-
-  <!-- Skills Section -->
-  <section class="px-6 md:px-16 py-20">
-    <h2 class="text-4xl font-extrabold mb-8 text-center text-yellow-400">Skills</h2>
-
-    <!-- Skill Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Technical Skills -->
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <img src="../assets/images/skills/biomedical_signal_processing.png" alt="Biomedical Signal Processing" class="w-16 h-16 mb-4">
-        <h3 class="text-xl font-semibold text-yellow-500">Biomedical Signal Processing</h3>
-      </div>
-
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <img src="../assets/images/skills/medical_imaging.png" alt="Medical Imaging" class="w-16 h-16 mb-4">
-        <h3 class="text-xl font-semibold text-yellow-500">Medical Imaging</h3>
-      </div>
-
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <img src="../assets/images/skills/data_analysis.png" alt="Data Analysis" class="w-16 h-16 mb-4">
-        <h3 class="text-xl font-semibold text-yellow-500">Data Analysis</h3>
-      </div>
-
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <img src="../assets/images/skills/artificial_intelligence.png" alt="Artificial Intelligence" class="w-16 h-16 mb-4">
-        <h3 class="text-xl font-semibold text-yellow-500">AI in Healthcare</h3>
-      </div>
-
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <img src="../assets/images/skills/nanotechnology.png" alt="Nanotechnology" class="w-16 h-16 mb-4">
-        <h3 class="text-xl font-semibold text-yellow-500">Nanotechnology</h3>
-      </div>
-
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <img src="../assets/images/skills/medical_devices.png" alt="Medical Devices" class="w-16 h-16 mb-4">
-        <h3 class="text-xl font-semibold text-yellow-500">Medical Devices</h3>
-      </div>
-
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <img src="../assets/images/skills/machine_learning.png" alt="Machine Learning" class="w-16 h-16 mb-4">
-        <h3 class="text-xl font-semibold text-yellow-500">Machine Learning</h3>
-      </div>
-
-      <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <img src="../assets/images/skills/3d_modeling.png" alt="3D Modeling" class="w-16 h-16 mb-4">
-        <h3 class="text-xl font-semibold text-yellow-500">3D Modeling</h3>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-white py-8 mt-16 text-center">
-    <p>&copy; 2025 Suriya Kumar S. All rights reserved.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    document.getElementById('menu-btn').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.remove('hidden');
-    });
-
-    document.getElementById('close-menu').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.add('hidden');
-    });
-  </script>
 </body>
 </html>
