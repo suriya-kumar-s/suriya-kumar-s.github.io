@@ -7,34 +7,23 @@
   <title>Skills | Suriya Kumar S</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .card {
-      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.3s;
-      transform: perspective(1000px) rotateX(0deg);
-      background-color: #1f2937; /* Tailwind's gray-800 */
-    }
-    .card:hover {
-      transform: scale(1.05) rotateX(3deg) translateY(-4px);
-      background-color: #2d3748;
-      box-shadow: 0 12px 24px rgba(255, 217, 61, 0.2), 0 0 8px rgba(255, 217, 61, 0.2);
-    }
-    .card:hover h3 {
-      color: #FFD93D;
-      text-shadow: 0 0 6px rgba(255, 217, 61, 0.5);
-    }
 
-    /* Mobile menu visibility control */
-    #mobile-menu {
-      display: none;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    #mobile-menu.open {
-      display: flex;
-      opacity: 1;
-      pointer-events: auto;
-    }
-  </style>
+  .card {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.3s;
+    transform: perspective(1000px) rotateX(0deg);
+    background-color: #1f2937; /* Tailwind's gray-800 */
+  }
+  .card:hover {
+    transform: scale(1.05) rotateX(3deg) translateY(-4px);
+    background-color: #2d3748; /* Slightly lighter gray on hover */
+    box-shadow: 0 12px 24px rgba(255, 217, 61, 0.2), 0 0 8px rgba(255, 217, 61, 0.2);
+  }
+  .card:hover h3 {
+    color: #FFD93D; /* Brighter yellow on hover */
+    text-shadow: 0 0 6px rgba(255, 217, 61, 0.5);
+  }
+</style>
+
 </head>
 
 <body class="bg-black text-white dark:bg-black dark:text-white transition-colors duration-300 font-sans">
@@ -59,7 +48,7 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex-col space-y-6 text-lg font-semibold text-center">
+  <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center transform">
     <button id="close-menu" class="text-yellow-400 text-4xl absolute top-5 right-6">&times;</button>
     <a href="../main-sections/about.html" class="hover:text-yellow-400">About</a>
     <a href="../main-sections/projects.html" class="hover:text-yellow-400">Projects</a>
@@ -72,7 +61,7 @@
 
   <!-- Skills Section -->
   <section class="px-6 md:px-16 py-20">
-    <h2 class="text-4xl font-extrabold mb-12 text-center text-yellow-400 animate-pulse">Skills</h2>
+    <h2 class="text-4xl font-extrabold mb-12 text-center text-yellow-400">Skills</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl">
         <img src="../assets/images/skills/biomedical_signal_processing.png" alt="Biomedical Signal Processing" class="w-16 h-16 mb-4">
@@ -117,14 +106,10 @@
   <!-- Scripts -->
   <script>
     const mobileMenu = document.getElementById('mobile-menu');
-    const menuBtn = document.getElementById('menu-btn');
-    const closeBtn = document.getElementById('close-menu');
-
-    menuBtn.addEventListener('click', () => {
+    document.getElementById('menu-btn').addEventListener('click', () => {
       mobileMenu.classList.add('open');
     });
-
-    closeBtn.addEventListener('click', () => {
+    document.getElementById('close-menu').addEventListener('click', () => {
       mobileMenu.classList.remove('open');
     });
   </script>
