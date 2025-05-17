@@ -8,6 +8,155 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     .card {
+      width: 140px; /* fixed smaller width */
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+      padding: 1rem 1rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 30px rgba(255, 217, 61, 0.3);
+    }
+    .card-description {
+      font-size: 0.8rem;
+      color: #FFD93D; /* Sunshine Yellow */
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white dark:bg-black dark:text-white transition-colors duration-300 font-sans">
+
+<!-- Navbar -->
+<nav class="flex justify-between items-center px-6 md:px-16 py-4 border-b border-gray-700">
+  <h1 class="text-2xl font-bold">
+    <a href="../index.html" class="transition-transform duration-300 hover:scale-105">Suriya Kumar S</a>
+  </h1>
+  <ul class="hidden md:flex space-x-8 text-sm uppercase font-semibold">
+    <li><a href="about.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">About</a></li>
+    <li><a href="projects.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Projects</a></li>
+    <li><a href="skills.html" class="text-yellow-400 font-bold">Skills</a></li>
+    <li><a href="achievements.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Achievements</a></li>
+    <li><a href="certifications.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Certifications</a></li>
+    <li><a href="blog.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Blog</a></li>
+    <li><a href="contact-me.html" class="hover:text-yellow-400 transition duration-300 hover:scale-105">Contact</a></li>
+  </ul>
+  <div class="md:hidden">
+    <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">&#9776;</button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 p-10 flex flex-col space-y-6 text-lg font-semibold text-center">
+  <button id="close-menu" class="text-yellow-400 text-3xl absolute top-5 right-6">&times;</button>
+  <a href="about.html" class="hover:text-yellow-400">About</a>
+  <a href="projects.html" class="hover:text-yellow-400">Projects</a>
+  <a href="skills.html" class="text-yellow-400 font-bold">Skills</a>
+  <a href="achievements.html" class="hover:text-yellow-400">Achievements</a>
+  <a href="certifications.html" class="hover:text-yellow-400">Certifications</a>
+  <a href="blog.html" class="hover:text-yellow-400">Blog</a>
+  <a href="contact-me.html" class="hover:text-yellow-400">Contact</a>
+</div>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById("menu-btn").addEventListener("click", function () {
+    document.getElementById("mobile-menu").classList.remove("hidden");
+  });
+
+  document.getElementById("close-menu").addEventListener("click", function () {
+    document.getElementById("mobile-menu").classList.add("hidden");
+  });
+</script>
+
+<!-- Skills Section -->
+<section class="px-6 md:px-16 py-20">
+  <h2 class="text-4xl font-extrabold mb-2 text-center text-yellow-400">Skills</h2>
+  <p class="text-center text-yellow-300 italic mb-12 max-w-md mx-auto drop-shadow-md">
+    Mastering tools & talents that bring ideas to life!
+  </p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/easyeda.png" alt="EasyEDA" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">EasyEDA</h3>
+      <p class="card-description">PCB design & simulation tool</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/html.png" alt="HTML" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">HTML</h3>
+      <p class="card-description">Markup language for web pages</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/css.png" alt="CSS" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">CSS</h3>
+      <p class="card-description">Styling web pages beautifully</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/kicad.png" alt="KiCad" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">KiCad</h3>
+      <p class="card-description">Open-source EDA software</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/cadence.png" alt="Cadence" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">Cadence</h3>
+      <p class="card-description">Electronic design automation suite</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/autocad.png" alt="AutoCAD" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">AutoCAD</h3>
+      <p class="card-description">2D & 3D CAD drafting software</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/figma.png" alt="Figma" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">Figma</h3>
+      <p class="card-description">UI/UX design & prototyping</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/canva.png" alt="Canva" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">Canva</h3>
+      <p class="card-description">Graphic design made easy</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/scriptwriting.png" alt="Scriptwriting" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">Scriptwriting</h3>
+      <p class="card-description">Crafting engaging stories</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/content-creation.png" alt="Content Creation" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">Content Creation</h3>
+      <p class="card-description">Producing creative media</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/davinci.png" alt="DaVinci Resolve" class="w-16 h-16 mb-2">
+      <h3 class="text-xl font-semibold text-yellow-500">DaVinci Resolve</h3>
+      <p class="card-description">Video editing & color grading</p>
+    </div>
+
+    <div class="card flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:shadow-yellow-500/30">
+      <img src="../assets/images/skills/github.png" alt="
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+  <title>Skills | Suriya Kumar S</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .card {
       transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     }
     .card:hover {
