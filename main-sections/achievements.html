@@ -7,14 +7,12 @@
   <title>Achievements & Activities | Suriya Kumar S</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
-    /* Custom badge hover effect */
     .badge-tile:hover {
       transform: translateY(-8px) scale(1.05);
       box-shadow: 0 8px 20px rgba(229, 202, 23, 0.4);
       border-color: #e5ca17;
       background: #1a1a1a;
     }
-    /* Smooth transition */
     .badge-tile {
       transition: all 0.3s ease;
     }
@@ -46,7 +44,7 @@
     <!-- Badge Grid Container -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
-      <!-- Badge Tile -->
+      <!-- 1. YouTube -->
       <a href="https://www.youtube.com/@TamilDevotionalBeats" target="_blank" rel="noopener" class="badge-tile cursor-pointer bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
         <img src="../assets/images/achievements/youtube-logo.png" alt="YouTube Milestone" class="w-20 h-20 mb-4 rounded-lg border border-yellow-400 object-cover" />
         <h3 class="text-xl font-semibold text-yellow-400 mb-1">133K YouTube Subscribers</h3>
@@ -54,30 +52,93 @@
         <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Milestone</span>
       </a>
 
-      <!-- Badge Tile -->
+      <!-- 2. Med-Innovate -->
       <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
         <img src="../assets/images/med-innovate.jpg" alt="Med-Innovate" class="w-24 h-24 mb-4 rounded-xl shadow-lg object-cover" />
         <h3 class="text-xl font-semibold text-yellow-400 mb-1">🏅 First Prize – Med-Innovate 2025</h3>
-        <p class="text-gray-300 text-sm mb-2">Secured first place at IEEE EMBS Day for “Revolutionizing Vaccine Development with AI”</p>
+        <p class="text-gray-300 text-sm mb-2">IEEE EMBS – AI-based vaccine development project</p>
         <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Award</span>
       </div>
 
-      <!-- Badge Tile -->
+      <!-- 3. Virtual Internship -->
       <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
-        <img src="../assets/images/virtual-internship.jpg" alt="Virtual Internship" class="w-24 h-24 mb-4 rounded-xl shadow-lg object-cover" />
-        <h3 class="text-xl font-semibold text-yellow-400 mb-1">💼 AICTE – Celonis Virtual Internship</h3>
-        <p class="text-gray-300 text-sm mb-2">Completed 10-week business analyst internship (Apr-Jun 2024)</p>
+        <img src="../assets/images/virtual-internship.jpg" alt="Celonis Internship" class="w-24 h-24 mb-4 rounded-xl shadow-lg object-cover" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">💼 AICTE – Celonis Internship</h3>
+        <p class="text-gray-300 text-sm mb-2">10-week process mining and business analysis internship</p>
         <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Internship</span>
       </div>
 
-      <!-- Add more badges here -->
+      <!-- 4. Biomedical Workshop Speaker -->
       <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mb-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="h-20 w-20 mb-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 0a6 6 0 10-12 0 6 6 0 0012 0z" />
         </svg>
-        <h3 class="text-xl font-semibold text-yellow-400 mb-1">📢 Speaker - Biomedical Workshop 2024</h3>
-        <p class="text-gray-300 text-sm mb-2">Presented on medical imaging techniques at SRM IST</p>
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">📢 Speaker – Biomedical Workshop</h3>
+        <p class="text-gray-300 text-sm mb-2">Presented on imaging techniques at SRM IST</p>
         <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Activity</span>
+      </div>
+
+      <!-- 5. Academic Scholarship -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">🎓 Academic Scholarship</h3>
+        <p class="text-gray-300 text-sm mb-2">SRM merit scholarship for academic excellence</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Merit</span>
+      </div>
+
+      <!-- 6. NPTEL – Health Research -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">📚 NPTEL – Health Research</h3>
+        <p class="text-gray-300 text-sm mb-2">Online course on research methodology in healthcare</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Certification</span>
+      </div>
+
+      <!-- 7. Design Thinking -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">💡 Best Team – Design Thinking</h3>
+        <p class="text-gray-300 text-sm mb-2">LoRa + GSM-based rural health monitoring solution</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Innovation</span>
+      </div>
+
+      <!-- 8. TOCFL -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">🌏 TOCFL Mandarin – Novice 2</h3>
+        <p class="text-gray-300 text-sm mb-2">Certified basic proficiency in Chinese language</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Language</span>
+      </div>
+
+      <!-- 9. Research Writing -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">✍️ Write It Right – Research Writing</h3>
+        <p class="text-gray-300 text-sm mb-2">Workshop on scientific writing & publication</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Workshop</span>
+      </div>
+
+      <!-- 10. PCB Workshop -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">🛠️ PCB Design Workshop</h3>
+        <p class="text-gray-300 text-sm mb-2">Hands-on 3-day training on circuit design & fabrication</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Skill</span>
+      </div>
+
+      <!-- 11. OriginLab -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">📈 OriginLab Workshop</h3>
+        <p class="text-gray-300 text-sm mb-2">Data analysis and graphing in scientific research</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Workshop</span>
+      </div>
+
+      <!-- 12. R Studio -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">🧮 R Studio Workshop</h3>
+        <p class="text-gray-300 text-sm mb-2">Basics of data analytics using R programming</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Skill</span>
+      </div>
+
+      <!-- 13. Metaverse Program -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">🕶️ Creators of Metaverse</h3>
+        <p class="text-gray-300 text-sm mb-2">AICTE-approved AR/VR & Blockchain workshop (2024)</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Tech Program</span>
       </div>
 
     </div>
