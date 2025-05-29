@@ -2,10 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon" />
   <title>Achievements & Activities | Suriya Kumar S</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Custom badge hover effect */
+    .badge-tile:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(229, 202, 23, 0.4);
+      border-color: #e5ca17;
+      background: #1a1a1a;
+    }
+    /* Smooth transition */
+    .badge-tile {
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
 <body class="bg-black text-white font-sans">
 
@@ -26,64 +39,45 @@
 
   <!-- Section Title -->
   <section class="px-6 md:px-20 py-16 bg-black">
-    <h2 class="text-4xl font-extrabold text-yellow-400 text-center mb-12">🏆 Achievements & Activities</h2>
+    <h2 class="text-4xl font-extrabold text-yellow-400 text-center mb-12 flex items-center justify-center gap-3">
+      <span>🏆</span> Achievements & Activities
+    </h2>
 
-    <!-- Grid Layout -->
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-      
-      <!-- Card: YouTube Milestone -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-yellow-400 transition-shadow duration-300">
-        <img src="../assets/images/achievements/youtube-logo.png" alt="YouTube Milestone" class="w-full h-40 object-contain p-4 bg-white">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-yellow-400">🎬 133K Subscribers on YouTube</h3>
-          <p class="text-gray-300 mt-2">Built <strong>Tamil Devotional Beats</strong> channel covering rural temple culture in Tamil Nadu.</p>
-          <a href="https://www.youtube.com/@TamilDevotionalBeats" target="_blank" class="text-yellow-400 underline mt-2 inline-block text-sm hover:text-yellow-300">Visit Channel →</a>
-        </div>
+    <!-- Badge Grid Container -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+
+      <!-- Badge Tile -->
+      <a href="https://www.youtube.com/@TamilDevotionalBeats" target="_blank" rel="noopener" class="badge-tile cursor-pointer bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <img src="../assets/images/achievements/youtube-logo.png" alt="YouTube Milestone" class="w-20 h-20 mb-4 rounded-lg border border-yellow-400 object-cover" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">133K YouTube Subscribers</h3>
+        <p class="text-gray-300 text-sm mb-2">Tamil Devotional Beats - Rural temple culture & live events</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Milestone</span>
+      </a>
+
+      <!-- Badge Tile -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <img src="../assets/images/med-innovate.jpg" alt="Med-Innovate" class="w-24 h-24 mb-4 rounded-xl shadow-lg object-cover" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">🏅 First Prize – Med-Innovate 2025</h3>
+        <p class="text-gray-300 text-sm mb-2">Secured first place at IEEE EMBS Day for “Revolutionizing Vaccine Development with AI”</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Award</span>
       </div>
 
-      <!-- Card: Med-Innovate -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-yellow-400 transition-shadow duration-300">
-        <img src="../assets/images/achievements/med-innovate.jpg" alt="Med-Innovate" class="w-full h-40 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-yellow-400">🥇 First Prize – Med-Innovate 2025</h3>
-          <p class="text-gray-300 mt-2">Won IEEE EMBS Day competition for "Revolutionizing Vaccine Development with AI."</p>
-        </div>
+      <!-- Badge Tile -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <img src="../assets/images/virtual-internship.jpg" alt="Virtual Internship" class="w-24 h-24 mb-4 rounded-xl shadow-lg object-cover" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">💼 AICTE – Celonis Virtual Internship</h3>
+        <p class="text-gray-300 text-sm mb-2">Completed 10-week business analyst internship (Apr-Jun 2024)</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Internship</span>
       </div>
 
-      <!-- Card: Virtual Internship -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-yellow-400 transition-shadow duration-300">
-        <img src="../assets/images/achievements/virtual-internship.jpg" alt="Internship" class="w-full h-40 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-yellow-400">💼 Celonis Virtual Internship</h3>
-          <p class="text-gray-300 mt-2">Completed AICTE Celonis internship on process mining (10 weeks).</p>
-        </div>
-      </div>
-
-      <!-- Card: ECG Series -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-yellow-400 transition-shadow duration-300">
-        <img src="../assets/images/achievements/ecg-series.jpg" alt="ECG" class="w-full h-40 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-yellow-400">📚 ECG LinkedIn Series</h3>
-          <p class="text-gray-300 mt-2">Created ECG interpretation series from basics to doctor level for biomedical students.</p>
-        </div>
-      </div>
-
-      <!-- Card: Seminar -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-yellow-400 transition-shadow duration-300">
-        <img src="../assets/images/achievements/seminar.jpg" alt="Seminar" class="w-full h-40 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-yellow-400">🎤 Guest Seminar on Imaging</h3>
-          <p class="text-gray-300 mt-2">Delivered seminar on X-ray, CT, and MRI techniques and their biomedical applications.</p>
-        </div>
-      </div>
-
-      <!-- Card: IEEE Poster Lead -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-yellow-400 transition-shadow duration-300">
-        <img src="../assets/images/achievements/ieee-embs.jpg" alt="IEEE EMBS" class="w-full h-40 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-yellow-400">🎨 Poster Lead – IEEE EMBS</h3>
-          <p class="text-gray-300 mt-2">Designed creative posters for IEEE EMBS student chapter events and outreach programs.</p>
-        </div>
+      <!-- Add more badges here -->
+      <div class="badge-tile bg-gray-900 border-2 border-yellow-500 rounded-xl p-6 flex flex-col items-center text-center hover:bg-yellow-900 hover:border-yellow-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mb-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 0a6 6 0 10-12 0 6 6 0 0012 0z" />
+        </svg>
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">📢 Speaker - Biomedical Workshop 2024</h3>
+        <p class="text-gray-300 text-sm mb-2">Presented on medical imaging techniques at SRM IST</p>
+        <span class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Activity</span>
       </div>
 
     </div>
